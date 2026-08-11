@@ -1,86 +1,248 @@
-# Hybrid LLM-based IT Helpdesk Chatbot
+# 🤖 Local AI Knowledge Assistant
 
-An intelligent, hybrid AI-powered chatbot designed to automate internal IT support. This system ingests historical helpdesk logs to resolve repetitive user issues locally using open-source Large Language Models (LLMs). When facing unknown or out-of-context queries, it seamlessly falls back to real-time web search capabilities.
+A privacy-focused local AI assistant that supports both:
 
-## 📌 Features
-- **Local LLM Execution:** Uses quantized local models (Mistral 7B) via `llama.cpp` for high performance, data privacy, and zero API costs.
-- **Smart RAG (Retrieval-Augmented Generation):** Matches user inquiries against internal historical IT logs using a fast FAISS vector store and BM25 retrievers.
-- **Automated Search Fallback:** Integrates web logic to fetch real-time solutions if internal documentation cannot resolve the problem.
-- **User-Friendly UI:** Simple, reactive web interface built with Streamlit featuring clean chat elements.
+1. **General AI chat** without uploading documents.
+2. **Optional RAG-based document chat** using user-provided PDF, DOCX, TXT, or Markdown files.
 
----
+Built to explore what a fully local RAG pipeline actually requires end-to-end — ingestion, hybrid retrieval, grounded generation, and a UI that doesn't feel like a debugging console — without depending on a hosted LLM API.
 
-## 🏗️ System Architecture
+The application runs a local **Mistral 7B Instruct GGUF model** and uses semantic + keyword retrieval for document-grounded answers.
 
-The chatbot operates via a robust pipeline organized as follows:
-1. **Data Ingestion:** Loads internal IT helpdesk logs stored in CSV format.
-2. **Text Processing & Embedding:** Documents are processed with LangChain's loaders and divided via text splitters. Chunks are converted to dense vectors using HuggingFace `sentence-transformers`.
-3. **Vector Database:** High-efficiency vector indexing and similarity searches are performed locally using **FAISS** alongside **BM25** ranking metrics.
-4. **Orchestration Chain:** Uses LangChain's orchestration handlers to pass the top relevant data blocks to the model.
-5. **Hybrid Response Engine:** Evaluates contexts to route queries either directly to the local model or to the external search fallback.
 
----
+## Architecture
 
-## 🛠️ Tools & Technologies Used
-
-- **Language:** Python
-- **Data Analysis & Visualization:** Pandas, Matplotlib, Seaborn, Wordcloud
-- **AI & Core NLP Stack:** LangChain, FAISS, HuggingFace Transformers, NLTK
-- **LLM Infrastructure:** LlamaCpp (`Mistral 7B GGUF`)
-- **Web Framework:** Streamlit, Streamlit-Chat
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com
-cd Group_3_AI_Helpdesk_Chatbot
+```text
+                         User
+                          |
+                          v
+                    Streamlit UI
+                          |
+              +-----------+-----------+
+              |                       |
+         No documents            Documents uploaded
+              |                       |
+              v                       v
+       Direct Mistral          Document ingestion
+                                      |
+                                      v
+                                  Chunking
+                                      |
+                           +----------+----------+
+                           |                     |
+                           v                     v
+                     SentenceTransformer      BM25
+                           |                     |
+                           v                     |
+                         FAISS                  |
+                           |                     |
+                           +----------+----------+
+                                      |
+                                Hybrid retrieval
+                                      |
+                                      v
+                              Retrieved context
+                                      |
+                                      v
+                                  Mistral 7B
+                                      |
+                                      v
+                           Grounded final answer
+                                      |
+                                      v
+                              Source references
 ```
 
-### 2. Install Dependencies
-Ensure you have Python 3.10+ installed and your virtual environment activated, then run:
+## Features
+
+- Local Mistral 7B inference
+- General chat without document upload
+- Optional PDF, DOCX, TXT, and Markdown ingestion
+- Semantic search with FAISS
+- Keyword search with BM25
+- Hybrid retrieval using reciprocal rank fusion
+- Source and page metadata
+- Conversation history
+- Configurable temperature
+- Configurable retrieval Top-K
+- Basic hallucination guardrails via system prompt
+- No cloud LLM API required
+
+## Project Structure
+
+```text
+local-ai-knowledge-assistant/
+├── app.py
+├── src/
+│   ├── config.py
+│   ├── ingestion.py
+│   ├── llm.py
+│   └── retriever.py
+├── models/
+│   └── mistral-7b-instruct-v0.1-q4_k_m.gguf
+├── data/
+├── evaluation/
+│   └── questions.json
+├── requirements.txt
+└── README.md
+```
+
+## 1. Create environment
+
+### Conda
+
+```bash
+conda create -n local-ai python=3.11 -y
+conda activate local-ai
+```
+
+Or with venv:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+## 2. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Model Setup & Download (Choose Option A or Option B)
-The chatbot relies on the **Mistral-7B-Instruct-v0.1-GGUF (Q4_K_M)** 4.37 GB model file. Because of GitHub's strict file limits, this file is excluded via `.gitignore` and must be obtained using one of these methods:
+### Apple Silicon note
 
-#### 🔹 Option A: Automatic Script Download (Recommended)
-You do not need to download anything manually. If you use the `huggingface_hub` integration in your python script, the model will download completely for free on your first run:
-```python
-from huggingface_hub import hf_hub_download
+`llama-cpp-python` can require a platform-specific build. If the standard installation does not provide the acceleration you want, install it using the official llama.cpp Python package instructions for your machine and then install the remaining requirements.
 
-# This automatically downloads and caches the 4GB file locally
-local_model_path = hf_hub_download(
-    repo_id="TheBloke/Mistral-7B-Instruct-v0.1-GGUF",
-    filename="mistral-7b-instruct-v0.1.Q4_K_M.gguf"
-)
+## 3. Add the Mistral model
+
+Place your existing model here:
+
+```text
+models/mistral-7b-instruct-v0.1-q4_k_m.gguf
 ```
 
-#### 🔹 Option B: Manual Browser Download
-If you prefer downloading via your web browser to store the file inside your project directory manually:
-1. Navigate to the model page on Hugging Face: [TheBloke/Mistral-7B-Instruct-v0.1-GGUF](https://huggingface.co)
-2. Go to the **Files and versions** tab and click download on `mistral-7b-instruct-v0.1.Q4_K_M.gguf`.
-3. Create a folder named `models/` inside your project root directory.
-4. Move your downloaded `mistral-7b-instruct-v0.1.Q4_K_M.gguf` file into that `models/` folder.
-5. In your main interface code file, update your model path link variable:
-   ```python
-   local_model_path = "models/mistral-7b-instruct-v0.1.Q4_K_M.gguf"
-   ```
-*(Note: Your `.gitignore` file is fully configured to ignore the `models/` folder so it will not bloat your GitHub uploads).*
+The model is intentionally ignored by Git because GGUF files can be several GB.
 
-### 4. Prepare Your Data
-Place your IT logs CSV file inside a designated `data/` folder directory named `IT_helpdesk.csv`.
+## 4. Run
 
-### 5. Launch the Chatbot
 ```bash
-streamlit run IT_Chatbot_Inteface.py
+streamlit run app.py
 ```
 
----
+## Deployment (Streamlit Community Cloud)
 
-## 📊 Model Evaluation
-System accuracy and retrieval relevance are rigorously evaluated and benchmarked using the **ROUGE score** metrics framework against known technical documentation ground truths.
+A full 7B GGUF model is too large/slow for Streamlit Cloud's default resources, so a cloud deployment of this repo is meant as a **UI/UX and code-quality demo**, not a full-speed inference environment. Two practical options:
+
+1. **Smaller quantized model** — swap `MODEL_PATH` to a smaller GGUF (e.g. a 1–3B instruct model) that fits within Streamlit Cloud's memory/CPU limits, at the cost of answer quality.
+2. **Demo mode** — point `MODEL_PATH` at nothing and let the app show its "Model not found" state, or stub `LocalLLM` behind an environment flag so reviewers can still exercise the UI (upload, chat layout, source cards) without a real model loaded.
+
+Steps:
+
+1. Push this repo to GitHub (do **not** commit the GGUF file — keep it in `.gitignore`).
+2. On [share.streamlit.io](https://share.streamlit.io), create a new app pointing at `app.py`.
+3. Add `requirements.txt` as-is; add any `packages.txt` entries `llama-cpp-python` needs for a CPU build on Streamlit's Linux runners.
+4. If using a smaller model, either commit it via Git LFS or download it at startup from a URL in `src/config.py`.
+
+## How to use
+
+### General chat
+
+Start the app and ask:
+
+```text
+What is retrieval augmented generation?
+```
+
+No documents are required.
+
+### Document chat
+
+Upload one or more:
+
+```text
+PDF
+DOCX
+TXT
+MD
+```
+
+Then ask questions about the uploaded content.
+
+Example:
+
+```text
+Summarize this document.
+
+What are the main requirements?
+
+What deadline is mentioned?
+
+Explain section 3 in simple terms.
+```
+
+## Important behavior
+
+If documents are uploaded, the application uses retrieved document context for document-aware answers.
+
+If the answer cannot be found in the retrieved context, the system prompt instructs the model to say so rather than invent document-specific facts.
+
+## Known limitations
+
+- **Stale document context after removal.** Removing an uploaded document clears the active retriever/knowledge base immediately, so no further retrieval happens against it. However, if a prior answer generated *while the document was indexed* is still sitting in the conversation history, the model can still reference facts from that earlier answer in later turns of the same session (this is ordinary conversational memory, not retrieval). **Workaround:** start a new conversation after removing a document. **Planned fix:** prune document-grounded messages from history when the knowledge base is cleared.
+- No persistent vector store — the index is rebuilt in memory each session and is lost on refresh/restart.
+- No reranking step after hybrid retrieval; result ordering relies solely on reciprocal rank fusion.
+- No streaming token output — responses render only once generation completes.
+- Scanned/image-only PDFs are not OCR'd, so their text will not be retrievable.
+- No automated tests yet for ingestion or retrieval correctness.
+
+## Portfolio improvements
+
+Potential future extensions:
+
+- Cross-session persistent vector databases
+- Better reranking models
+- Streaming token output
+- OCR for scanned PDFs
+- Table extraction
+- Web search tool
+- More document formats
+- Retrieval evaluation dashboard
+- Faithfulness and answer-relevance evaluation
+- User authentication
+- Conversation export
+- Multiple local models
+- Quantization/performance comparison
+
+## Security / privacy
+
+The application is designed around local inference. Uploaded documents are processed by the application and are not intentionally sent to a hosted LLM API.
+
+Do not place confidential files into the project repository.
+
+## Evaluation (planned)
+
+The project includes a starting point for retrieval/answer evaluation, not yet a completed benchmark:
+
+```text
+evaluation/questions.json
+```
+
+Planned metrics once a question set is populated:
+
+- Retrieval hit rate
+- Precision@K
+- Recall@K
+- Answer relevance
+- Faithfulness
+- Response latency
+- Tokens per second
+
+## License
+
+MIT — see `LICENSE` for details.
+
+## Portfolio description
+
+**Local AI Knowledge Assistant — Privacy-Preserving RAG Chatbot**
+
+Built a local AI assistant using Mistral 7B, llama.cpp, Sentence Transformers, FAISS, and BM25, supporting both general conversational queries and optional document-grounded question answering. Implemented document ingestion, chunking, hybrid semantic-keyword retrieval, conversation context, source attribution, and hallucination guardrails for grounded responses.
