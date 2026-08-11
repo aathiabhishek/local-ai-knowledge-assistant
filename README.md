@@ -241,8 +241,3 @@ Planned metrics once a question set is populated:
 
 MIT — see `LICENSE` for details.
 
-## Portfolio description
-
-**Local AI Knowledge Assistant — Privacy-Preserving RAG Chatbot**
-
-Built a local AI assistant using Mistral 7B, llama.cpp, Sentence Transformers, FAISS, and BM25, supporting both general conversational queries and optional document-grounded question answering. Implemented document ingestion, chunking, hybrid semantic-keyword retrieval, conversation context, source attribution, and hallucination guardrails for grounded responses.
