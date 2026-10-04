@@ -1,243 +1,179 @@
-# 🤖 Local AI Knowledge Assistant
+# Local AI Knowledge Assistant
 
-A privacy-focused local AI assistant that supports both:
+A privacy-focused local AI assistant that supports both general chat and document-grounded retrieval using a local model.
 
-1. **General AI chat** without uploading documents.
-2. **Optional RAG-based document chat** using user-provided PDF, DOCX, TXT, or Markdown files.
+This project is built to explore a fully local Retrieval-Augmented Generation (RAG) workflow end-to-end, including:
+- document ingestion
+- chunking
+- semantic + keyword retrieval
+- grounded answer generation
+- a simple Streamlit-based interface
 
-Built to explore what a fully local RAG pipeline actually requires end-to-end — ingestion, hybrid retrieval, grounded generation, and a UI that doesn't feel like a debugging console — without depending on a hosted LLM API.
-
-The application runs a local **Mistral 7B Instruct GGUF model** and uses semantic + keyword retrieval for document-grounded answers.
-
-
-## Architecture
-
-```text
-                         User
-                          |
-                          v
-                    Streamlit UI
-                          |
-              +-----------+-----------+
-              |                       |
-         No documents            Documents uploaded
-              |                       |
-              v                       v
-       Direct Mistral          Document ingestion
-                                      |
-                                      v
-                                  Chunking
-                                      |
-                           +----------+----------+
-                           |                     |
-                           v                     v
-                     SentenceTransformer      BM25
-                           |                     |
-                           v                     |
-                         FAISS                  |
-                           |                     |
-                           +----------+----------+
-                                      |
-                                Hybrid retrieval
-                                      |
-                                      v
-                              Retrieved context
-                                      |
-                                      v
-                                  Mistral 7B
-                                      |
-                                      v
-                           Grounded final answer
-                                      |
-                                      v
-                              Source references
-```
+It runs locally and does not require cloud-based LLM APIs for the main experience.
 
 ## Features
 
-- Local Mistral 7B inference
-- General chat without document upload
-- Optional PDF, DOCX, TXT, and Markdown ingestion
-- Semantic search with FAISS
-- Keyword search with BM25
-- Hybrid retrieval using reciprocal rank fusion
-- Source and page metadata
+- General chat without uploaded documents
+- Optional document chat using PDF, DOCX, TXT, and Markdown files
+- Hybrid retrieval using FAISS + BM25
+- Source metadata and page references
 - Conversation history
-- Configurable temperature
-- Configurable retrieval Top-K
-- Basic hallucination guardrails via system prompt
-- No cloud LLM API required
+- Local Mistral inference via llama.cpp
+- Privacy-first local processing
 
 ## Project Structure
 
 ```text
 local-ai-knowledge-assistant/
 ├── app.py
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── run.sh
+├── run.bat
+├── .gitignore
+├── evaluation/
+│   └── questions.json
 ├── src/
+│   ├── __init__.py
 │   ├── config.py
 │   ├── ingestion.py
 │   ├── llm.py
 │   └── retriever.py
 ├── models/
-│   └── mistral-7b-instruct-v0.1-q4_k_m.gguf
+│   └── (your local GGUF model here)
 ├── data/
-├── evaluation/
-│   └── questions.json
-├── requirements.txt
-└── README.md
+│   └── (local document storage, if used)
+└── .streamlit/
+    └── (local Streamlit config, if created)
 ```
 
-## 1. Create environment
+## Architecture
 
-### Conda
-
-```bash
-conda create -n local-ai python=3.11 -y
-conda activate local-ai
+```text
+User
+  |
+  v
+Streamlit UI
+  |
+  +-- No documents ------------------> Local Mistral chat
+  |
+  +-- Documents uploaded --> Ingestion --> Chunking --> FAISS + BM25 --> Hybrid retrieval --> Mistral --> Grounded answer
 ```
 
-Or with venv:
+## Requirements
+
+- Python 3.10+
+- pip
+- A compatible local GGUF model file
+- System libraries required by llama-cpp-python for your platform
+
+## Setup
+
+### 1) Create a virtual environment
+
+Using venv:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-## 2. Install dependencies
+Or with Conda:
+
+```bash
+conda create -n local-ai python=3.11 -y
+conda activate local-ai
+```
+
+### 2) Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Apple Silicon note
+### 3) Add your local model
 
-`llama-cpp-python` can require a platform-specific build. If the standard installation does not provide the acceleration you want, install it using the official llama.cpp Python package instructions for your machine and then install the remaining requirements.
-
-## 3. Add the Mistral model
-
-Place your existing model here:
+Place your GGUF model in the `models/` directory, for example:
 
 ```text
 models/mistral-7b-instruct-v0.1-q4_k_m.gguf
 ```
 
-The model is intentionally ignored by Git because GGUF files can be several GB.
+The repo intentionally ignores `models/` and other large/generated files through `.gitignore`.
 
-## 4. Run
+## Run the app
 
 ```bash
 streamlit run app.py
 ```
 
-## Deployment (Streamlit Community Cloud)
+You can also use the provided launcher scripts:
 
-A full 7B GGUF model is too large/slow for Streamlit Cloud's default resources, so a cloud deployment of this repo is meant as a **UI/UX and code-quality demo**, not a full-speed inference environment. Two practical options:
+```bash
+./run.sh
+```
 
-1. **Smaller quantized model** — swap `MODEL_PATH` to a smaller GGUF (e.g. a 1–3B instruct model) that fits within Streamlit Cloud's memory/CPU limits, at the cost of answer quality.
-2. **Demo mode** — point `MODEL_PATH` at nothing and let the app show its "Model not found" state, or stub `LocalLLM` behind an environment flag so reviewers can still exercise the UI (upload, chat layout, source cards) without a real model loaded.
+On Windows:
 
-Steps:
-
-1. Push this repo to GitHub (do **not** commit the GGUF file — keep it in `.gitignore`).
-2. On [share.streamlit.io](https://share.streamlit.io), create a new app pointing at `app.py`.
-3. Add `requirements.txt` as-is; add any `packages.txt` entries `llama-cpp-python` needs for a CPU build on Streamlit's Linux runners.
-4. If using a smaller model, either commit it via Git LFS or download it at startup from a URL in `src/config.py`.
+```bat
+run.bat
+```
 
 ## How to use
 
 ### General chat
 
-Start the app and ask:
-
-```text
-What is retrieval augmented generation?
-```
-
-No documents are required.
+Open the app and ask technical questions without uploading any documents.
 
 ### Document chat
 
-Upload one or more:
+Upload one or more of these file types:
+- PDF
+- DOCX
+- TXT
+- Markdown (.md)
 
-```text
-PDF
-DOCX
-TXT
-MD
-```
-
-Then ask questions about the uploaded content.
-
-Example:
-
-```text
-Summarize this document.
-
-What are the main requirements?
-
-What deadline is mentioned?
-
-Explain section 3 in simple terms.
-```
+Then ask questions about the uploaded material. The app will use the retrieved chunks as context before generating an answer.
 
 ## Important behavior
 
-If documents are uploaded, the application uses retrieved document context for document-aware answers.
-
-If the answer cannot be found in the retrieved context, the system prompt instructs the model to say so rather than invent document-specific facts.
+- If documents are uploaded, the app uses retrieved document context for document-aware answers.
+- If the answer is not found in the retrieved passages, the model is instructed not to invent document-specific facts.
+- The knowledge base is rebuilt in memory for the current session; it is not persisted across restarts.
 
 ## Known limitations
 
-- **Stale document context after removal.** Removing an uploaded document clears the active retriever/knowledge base immediately, so no further retrieval happens against it. However, if a prior answer generated *while the document was indexed* is still sitting in the conversation history, the model can still reference facts from that earlier answer in later turns of the same session (this is ordinary conversational memory, not retrieval). **Workaround:** start a new conversation after removing a document. **Planned fix:** prune document-grounded messages from history when the knowledge base is cleared.
-- No persistent vector store — the index is rebuilt in memory each session and is lost on refresh/restart.
-- No reranking step after hybrid retrieval; result ordering relies solely on reciprocal rank fusion.
-- No streaming token output — responses render only once generation completes.
-- Scanned/image-only PDFs are not OCR'd, so their text will not be retrievable.
-- No automated tests yet for ingestion or retrieval correctness.
+- No persistent vector store across sessions
+- No reranking pipeline beyond the current hybrid retrieval approach
+- No streaming token output
+- OCR for scanned PDFs is not included
+- No automated evaluation suite yet
 
-## Portfolio improvements
+## Security and privacy
 
-Potential future extensions:
+This project is designed around local inference. Uploaded documents are processed locally and are not intentionally sent to a hosted LLM API.
 
-- Cross-session persistent vector databases
-- Better reranking models
-- Streaming token output
-- OCR for scanned PDFs
-- Table extraction
-- Web search tool
-- More document formats
-- Retrieval evaluation dashboard
-- Faithfulness and answer-relevance evaluation
-- User authentication
-- Conversation export
-- Multiple local models
-- Quantization/performance comparison
+Do not commit sensitive or confidential files to the repository.
 
-## Security / privacy
+## Maintenance notes
 
-The application is designed around local inference. Uploaded documents are processed by the application and are not intentionally sent to a hosted LLM API.
+This repository keeps the original simple structure intentionally:
+- core app logic in `app.py`
+- reusable project logic in `src/`
+- local model/data files ignored via `.gitignore`
+- evaluation assets kept separate in `evaluation/`
 
-Do not place confidential files into the project repository.
-
-## Evaluation (planned)
-
-The project includes a starting point for retrieval/answer evaluation, not yet a completed benchmark:
-
-```text
-evaluation/questions.json
-```
-
-Planned metrics once a question set is populated:
-
-- Retrieval hit rate
-- Precision@K
-- Recall@K
-- Answer relevance
-- Faithfulness
-- Response latency
-- Tokens per second
+This keeps the project easy to run, easy to review, and easy to maintain without adding unnecessary abstraction.
 
 ## License
 
-MIT — see `LICENSE` for details.
+This project is licensed under the MIT License. See `LICENSE` for details.
 
+## Contributing
+
+If you want to improve the project:
+1. keep the project structure simple
+2. avoid adding generated files to git
+3. test changes before submitting them
+4. keep documentation aligned with the actual code
