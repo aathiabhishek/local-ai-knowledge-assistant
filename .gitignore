@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.coverage.*
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.*
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Local app data and generated files
+models/
+data/
+*.gguf
+*.bin
+*.pt
+*.pkl
+*.sqlite3
+
+# Streamlit / local secrets
+.streamlit/
+.streamlit/secrets.toml
+
+# Build / distribution
+build/
+dist/
+downloads/
+.eggs/
+*.egg-info/
+*.egg
+
+# Temporary files
+.tmp/
+tmp/
+logs/
+*.log
+
+# OS files
+.AppleDouble
+.LSOverride
