@@ -479,7 +479,7 @@ if st.session_state.llm is None:
 
     else:
 
-        with st.spinner("Loading local Mistral model..."):
+        with st.spinner("Loading Llama-3.1 model..."):
 
             try:
 
