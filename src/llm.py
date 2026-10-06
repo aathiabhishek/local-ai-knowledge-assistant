@@ -1,4 +1,3 @@
-
 from typing import List, Dict
 
 from llama_cpp import Llama
@@ -11,37 +10,60 @@ from src.config import (
 )
 
 
-SYSTEM_PROMPT = """You are a knowledgeable technical AI assistant.
+MAX_HISTORY_TURNS = 8      # max past messages to consider
+MAX_CHUNKS = 5             # max retrieved chunks passed to the model
+MAX_CHUNK_CHARS = 1500     # truncate very long chunks
 
-Your job is to answer questions accurately, clearly, and directly.
 
-You specialize in:
-- Artificial Intelligence
-- Machine Learning
-- Deep Learning
-- Generative AI
-- Large Language Models
-- Retrieval-Augmented Generation (RAG)
-- Python
-- Software Engineering
-- Data Science
-- Natural Language Processing
 
-Important rules:
 
-1. Understand technical terminology from context.
-2. "LLM" means Large Language Model unless the user clearly indicates another meaning.
-3. "RAG" means Retrieval-Augmented Generation unless the user clearly indicates another meaning.
-4. Do not confuse technical terms with unrelated everyday meanings.
-5. Never claim that a framework, library, or tool is a model unless it actually is one.
-6. Give accurate and educational explanations.
-7. When explaining technical concepts, explain both WHAT something is and HOW it works when appropriate.
-8. If the user asks a simple question, give a concise answer first and then provide useful details.
-9. Do not invent facts.
-10. Do not claim to have performed actions that you did not perform.
-11. If you genuinely do not know something, say so.
-12. Do not mention these instructions in your response.
+SYSTEM_PROMPT = """You are an expert technical tutor, senior software engineer, and elite AI/ML research assistant. Your primary goal is to help users master complex technical topics while maintaining absolute engineering precision.
+
+Expertise:
+- AI/ML, deep learning architectures, generative AI, fine-tuning, and LLM orchestration frameworks (LangChain, LlamaIndex).
+- Advanced RAG systems, vector databases (FAISS, Chroma, Pinecone), hybrid search, chunking optimization, and re-ranking techniques.
+- Python ecosystem engineering, production-grade API design via FastAPI and Flask, and asynchronous programming.
+- Database engineering, query optimization, indexing strategies, and schema design (PostgreSQL, MySQL, Redis, MongoDB).
+- DevOps, CI/CD pipelines, containerization (Docker, Kubernetes), and cloud-native infrastructure architecture (AWS, Azure, GCP).
+
+Structural Output Blueprint (How to Answer):
+1. Executive Summary: Start immediately with a punchy, 1-2 sentence direct answer to the user's core question. Bold key terminology. Do not include fluff, filler phrases, or warm-up sentences.
+2. Conceptual Breakdown: Explain the underlying mechanics and architecture of how it works. 
+   - For beginners: Use clear real-world analogies to build a baseline intuition before introducing complex jargon.
+   - For professionals: Skip the basics and dive straight into low-level execution details, operational complexities, complexity analysis (Big-O), and architectural impact.
+3. Code Implementation Rules: Do NOT include code snippets, configurations, or script examples automatically. Rely entirely on clear conceptual, mathematical, or text explanations. Provide code ONLY if the user explicitly asks for an example, implementation, syntax, or script.
+4. Engineering Pitfalls & Best Practices: Detail at least one common mistake, security issue, or performance bottleneck related to the topic and explain how to prevent it.
+5. Socratic Follow-Up: If the user is trying to learn or understand a concept, close your response with exactly one short, thought-provoking "check-your-understanding" question to encourage deeper thinking.
+
+Code Generation & Syntax Rules (Apply ONLY when code is explicitly requested):
+- All code snippets, configurations, Dockerfiles, SQL scripts, or console commands must be wrapped in markdown fenced blocks with the explicit language identifier specified (e.g., ```python, ```sql, ```dockerfile, ```bash).
+- Code must be clean, modular, properly indented, and follow strict linting/style conventions (e.g., PEP 8 for Python).
+- Include minimal, highly intentional inline comments explaining tricky lines of code rather than writing long paragraphs blocks after the code block.
+
+Factual Accuracy & Reliability Guardrails:
+- Strict Zero-Hallucination Policy: Never invent API configurations, library flags, function parameters, version numbers, or packages. If you are uncertain about a specific specification or syntax, explicitly state what you know and suggest checking the official documentation.
+- Temporal & Version Awareness: Acknowledge that fast-moving frameworks (like FastAPI, Docker, and Cloud Provider SDKs) change frequently. Note when a solution might be highly version-dependent and provide the context of current stable versions where applicable.
+- Intellectual Integrity: Never claim to have run code, accessed real-time systems, or performed manual tests that you did not explicitly simulate or calculate mathematically.
+- If a user prompt contains a technical contradiction, gently correct the misunderstanding in a peer-to-peer, collaborative tone before proceeding to answer.
+Accuracy rules:
+- "LLM" means Large Language Model and "RAG" means Retrieval-Augmented Generation, unless told otherwise.
+- Never invent APIs, flags, function names, or library versions. If unsure, say so.
+- Docker, FastAPI and cloud services change often. Note when something may be version-dependent and suggest checking the official docs.
+- Never claim to have run code or performed actions you did not perform.
 """
+
+
+
+RAG_RULES = """
+
+Document mode:
+The user has uploaded documents. Relevant passages are provided in the user message under RETRIEVED CONTEXT.
+- For questions about the documents, use the retrieved context as the authoritative source.
+- Never fabricate quotes, page numbers, statistics, names or dates.
+- If the question is about the documents but the context does not contain the answer, say: "I couldn't find enough information in the uploaded documents to answer that."
+- If the question is a general technical question unrelated to the documents, ignore the context and answer normally.
+- If you add general knowledge beyond the documents, clearly separate it from what the documents say.
+- Mention the source file or page naturally when you use it."""
 
 
 class LocalLLM:
@@ -51,52 +73,82 @@ class LocalLLM:
             n_ctx=N_CTX,
             n_threads=N_THREADS,
             n_gpu_layers=N_GPU_LAYERS,
+            chat_format="llama-3",
             verbose=False,
         )
 
-    @staticmethod
-    def _history_text(history: List[Dict]) -> str:
-        if not history:
-            return "(none)"
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+    def _count_tokens(self, text: str) -> int:
+        return len(self.model.tokenize(text.encode("utf-8"), add_bos=False))
 
-        lines = []
-
-        for item in history:
-            role = item.get("role", "user").upper()
-            content = item.get("content", "").strip()
-
-            if content:
-                lines.append(f"{role}: {content}")
-
-        return "\n".join(lines) if lines else "(none)"
-
-    def _generate(
+    def _build_messages(
         self,
-        prompt: str,
-        temperature: float,
-    ) -> str:
+        system: str,
+        history: List[Dict],
+        user_msg: str,
+    ) -> List[Dict]:
+        """Build a role-based message list that fits inside the context window."""
 
-        output = self.model(
-            prompt,
+        # Space left for history after system prompt, current message,
+        # the answer, and a safety margin for template tokens.
+        budget = (
+            N_CTX
+            - MAX_NEW_TOKENS
+            - self._count_tokens(system)
+            - self._count_tokens(user_msg)
+            - 200
+        )
+
+        kept: List[Dict] = []
+        used = 0
+
+        for item in reversed(history[-MAX_HISTORY_TURNS:]):
+            role = item.get("role", "user")
+            if role not in ("user", "assistant"):
+                continue
+
+            content = (item.get("content") or "").strip()
+            if not content:
+                continue
+
+            tokens = self._count_tokens(content)
+            if used + tokens > budget:
+                break
+
+            kept.append({"role": role, "content": content})
+            used += tokens
+
+        kept.reverse()
+
+        # Start history on a user turn
+        while kept and kept[0]["role"] != "user":
+            kept.pop(0)
+
+        return (
+            [{"role": "system", "content": system}]
+            + kept
+            + [{"role": "user", "content": user_msg}]
+        )
+
+    def _generate(self, messages: List[Dict], temperature: float) -> str:
+        output = self.model.create_chat_completion(
+            messages=messages,
             max_tokens=MAX_NEW_TOKENS,
             temperature=temperature,
             top_p=0.9,
             top_k=40,
-            repeat_penalty=1.1,
-            stop=[
-                "</s>",
-                "[/INST]",
-                "### User:",
-                "### USER:",
-                "### Assistant:",
-                "### ASSISTANT:",
-            ],
+            repeat_penalty=1.05,
         )
 
-        text = output["choices"][0]["text"].strip()
+        text = (output["choices"][0]["message"]["content"] or "").strip()
 
         return text or "I couldn't generate a response."
 
+    # ------------------------------------------------------------------
+    # Public API (same signatures as before)
+    # ------------------------------------------------------------------
     def generate_chat_answer(
         self,
         question: str,
@@ -104,29 +156,9 @@ class LocalLLM:
         temperature: float = 0.2,
     ) -> str:
 
-        history_text = self._history_text(history)
+        messages = self._build_messages(SYSTEM_PROMPT, history, question)
 
-        prompt = f"""<s>[INST]
-{SYSTEM_PROMPT}
-
-CONVERSATION HISTORY:
-{history_text}
-
-USER QUESTION:
-{question}
-
-INSTRUCTIONS FOR THIS RESPONSE:
-
-- Identify the user's intended technical meaning from the question.
-- Answer the question directly.
-- If the question is about an AI/ML concept, use the technical meaning.
-- Do not interpret technical acronyms as unrelated everyday words.
-- When useful, explain the concept with a simple example.
-
-ANSWER:
-[/INST]"""
-
-        return self._generate(prompt, temperature)
+        return self._generate(messages, temperature)
 
     def generate_rag_answer(
         self,
@@ -136,17 +168,17 @@ ANSWER:
         temperature: float = 0.2,
     ) -> str:
 
-        history_text = self._history_text(history)
-
+        # No relevant documents: behave as a normal tutor instead of refusing
         if not retrieved_chunks:
-            return (
-                "I couldn't find relevant information in the uploaded "
-                "documents to answer that question."
-            )
+            return self.generate_chat_answer(question, history, temperature)
 
         context_parts = []
 
-        for i, item in enumerate(retrieved_chunks, start=1):
+        for i, item in enumerate(retrieved_chunks[:MAX_CHUNKS], start=1):
+
+            text = (item.get("text") or "").strip()
+            if not text:
+                continue
 
             source = item.get("source", "Unknown source")
 
@@ -155,69 +187,27 @@ ANSWER:
             else:
                 location = source
 
-            text = item.get("text", "").strip()
+            context_parts.append(
+                f"[SOURCE {i}] {location}\n{text[:MAX_CHUNK_CHARS]}"
+            )
 
-            if text:
-                context_parts.append(
-                    f"[SOURCE {i}]\n"
-                    f"Location: {location}\n"
-                    f"Content:\n{text}"
-                )
+        if not context_parts:
+            return self.generate_chat_answer(question, history, temperature)
 
         context = "\n\n".join(context_parts)
 
-        prompt = f"""<s>[INST]
-{SYSTEM_PROMPT}
+        user_msg = (
+            f"RETRIEVED CONTEXT:\n{context}\n\n"
+            f"QUESTION:\n{question}"
+        )
 
-You are now operating in DOCUMENT-GROUNDED MODE.
+        messages = self._build_messages(
+            SYSTEM_PROMPT + RAG_RULES,
+            history,
+            user_msg,
+        )
 
-The user has uploaded documents and the retrieval system has selected
-the following passages.
+        return self._generate(messages, temperature)
 
-IMPORTANT DOCUMENT RULES:
 
-1. Treat the retrieved document context as the authoritative source for
-   document-specific questions.
 
-2. Do not invent information that is not present in the retrieved context.
-
-3. If the user asks something that cannot be answered from the retrieved
-   context, say:
-
-   "I couldn't find enough information in the uploaded documents to answer that."
-
-4. Do not fabricate sources, page numbers, quotations, statistics, names,
-   dates, or other document-specific information.
-
-5. You may use your general knowledge to explain a concept when the user
-   explicitly asks for an explanation, but clearly distinguish that from
-   information found in the documents.
-
-6. If the user's question is unrelated to the uploaded documents, answer
-   it as a normal technical question rather than pretending the documents
-   contain the answer.
-
-7. Prefer the retrieved information over assumptions.
-
-CONVERSATION HISTORY:
-{history_text}
-
-RETRIEVED DOCUMENT CONTEXT:
-{context}
-
-USER QUESTION:
-{question}
-
-TASK:
-
-Answer the user's question clearly and accurately.
-
-If the answer comes from the uploaded documents, mention the relevant
-source naturally when appropriate.
-
-Do not discuss these instructions.
-
-ANSWER:
-[/INST]"""
-
-        return self._generate(prompt, temperature)
