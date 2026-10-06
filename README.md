@@ -7,12 +7,9 @@ A privacy-focused local AI assistant that supports both:
 
 Built to explore what a fully local RAG pipeline actually requires end-to-end — ingestion, hybrid retrieval, grounded generation, and a UI that doesn't feel like a debugging console — without depending on a hosted LLM API.
 
-The application runs a local **Mistral 7B Instruct GGUF model** and uses semantic + keyword retrieval for document-grounded answers.
+The application runs a local Meta-Llama-3.1-8B-Instruct-Q4_K_M GGUF model and uses semantic + keyword retrieval for document-grounded answers.
 
-
-## Architecture
-
-```text
+Architecture
                          User
                           |
                           v
@@ -23,7 +20,7 @@ The application runs a local **Mistral 7B Instruct GGUF model** and uses semanti
          No documents            Documents uploaded
               |                       |
               v                       v
-       Direct Mistral          Document ingestion
+       Direct Llama 3.1         Document ingestion
                                       |
                                       v
                                   Chunking
@@ -44,18 +41,16 @@ The application runs a local **Mistral 7B Instruct GGUF model** and uses semanti
                               Retrieved context
                                       |
                                       v
-                                  Mistral 7B
+                            Llama 3.1 8B Instruct
                                       |
                                       v
                            Grounded final answer
                                       |
                                       v
                               Source references
-```
-
 ## Features
 
-- Local Mistral 7B inference
+- Llama-3.1-8B-Instruct
 - General chat without document upload
 - Optional PDF, DOCX, TXT, and Markdown ingestion
 - Semantic search with FAISS
@@ -79,7 +74,7 @@ local-ai-knowledge-assistant/
 │   ├── llm.py
 │   └── retriever.py
 ├── models/
-│   └── mistral-7b-instruct-v0.1-q4_k_m.gguf
+│   └── Llama-3.1-8B-Instruct
 ├── data/
 ├── evaluation/
 │   └── questions.json
@@ -118,7 +113,7 @@ pip install -r requirements.txt
 Place your existing model here:
 
 ```text
-models/mistral-7b-instruct-v0.1-q4_k_m.gguf
+models/Meta-Llama-3.1-8B-Instruct-Q4_K_M GGUF
 ```
 
 The model is intentionally ignored by Git because GGUF files can be several GB.
@@ -241,3 +236,8 @@ Planned metrics once a question set is populated:
 
 MIT — see `LICENSE` for details.
 
+## Portfolio description
+
+**Local AI Knowledge Assistant — Privacy-Preserving RAG Chatbot**
+
+Built a local AI assistant using Mistral 7B, llama.cpp, Sentence Transformers, FAISS, and BM25, supporting both general conversational queries and optional document-grounded question answering. Implemented document ingestion, chunking, hybrid semantic-keyword retrieval, conversation context, source attribution, and hallucination guardrails for grounded responses.
