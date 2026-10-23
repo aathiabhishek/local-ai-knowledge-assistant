@@ -272,3 +272,24 @@ bash streamlit run app.py
 
 To regenerate the 100-question corpus and execute the evaluation metrics:
 bash python evaluation/build_large_benchmark.py python evaluation/evaluate.py 
+
+
+
+## 🚀 Live Demo
+
+Try the **Local AI Knowledge Assistant** in your browser:
+
+🔗 **[Launch the Streamlit App](https://local-ai-knowledge-assistant.streamlit.app/)**
+
+Explore document-based question answering, hybrid retrieval, and AI-powered technical assistance through an interactive Streamlit interface.
+
+### ☁️ Deployment
+
+The application is deployed using [Streamlit Community Cloud](https://streamlit.io/cloud) and connected to its GitHub repository for deployment and updates.
+
+**Deployment configuration:**
+- **Platform:** Streamlit Community Cloud
+- **Framework:** Streamlit
+- **Secrets management:** API keys are configured through Streamlit Cloud Secrets rather than committed to the repository.
+- **Inference:** Local GGUF inference requires the model file and suitable runtime resources. Optional Groq inference requires a valid API key and internet access.
+
