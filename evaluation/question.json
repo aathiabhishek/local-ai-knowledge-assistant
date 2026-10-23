@@ -1,0 +1,402 @@
+[
+  {
+    "question": "In what country is Normandy located?",
+    "expected": "France"
+  },
+  {
+    "question": "When were the Normans in Normandy?",
+    "expected": "10th and 11th centuries"
+  },
+  {
+    "question": "Who was the duke in the battle of Hastings?",
+    "expected": "William the Conqueror"
+  },
+  {
+    "question": "Who ruled the duchy of Normandy",
+    "expected": "Richard I"
+  },
+  {
+    "question": "What is the original meaning of the word Norman?",
+    "expected": "Viking"
+  },
+  {
+    "question": "When was the Latin version of the word Norman first recorded?",
+    "expected": "9th century"
+  },
+  {
+    "question": "When was the Duchy of Normandy founded?",
+    "expected": "911"
+  },
+  {
+    "question": "Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?",
+    "expected": "King Charles III"
+  },
+  {
+    "question": "Who upon arriving gave the original viking settlers a common identity?",
+    "expected": "Rollo"
+  },
+  {
+    "question": "What was the Norman religion?",
+    "expected": "Catholicism"
+  },
+  {
+    "question": "What part of France were the Normans located?",
+    "expected": "north"
+  },
+  {
+    "question": "What was one of the Norman's major exports?",
+    "expected": "fighting horsemen"
+  },
+  {
+    "question": "Who was the Normans' main enemy in Italy, the Byzantine Empire and Armenia?",
+    "expected": "Seljuk Turks"
+  },
+  {
+    "question": "When did Herve serve as a Byzantine general?",
+    "expected": "1050s"
+  },
+  {
+    "question": "When did Robert Crispin go up against the Turks?",
+    "expected": "1060s"
+  },
+  {
+    "question": "What was the name of the Norman castle?",
+    "expected": "Afranji"
+  },
+  {
+    "question": "Who was the leader when the Franks entered the Euphrates valley?",
+    "expected": "Oursel"
+  },
+  {
+    "question": "What were the origins of the Raouliii family?",
+    "expected": "Norman mercenary"
+  },
+  {
+    "question": "What was the name of the count of Apulia",
+    "expected": "Robert Guiscard"
+  },
+  {
+    "question": "When did Dyrrachium  fall to the Normans?",
+    "expected": "1082"
+  },
+  {
+    "question": "Where did the Normans and Byzantines sign the peace treaty?",
+    "expected": "Deabolis"
+  },
+  {
+    "question": "Who was Robert's son?",
+    "expected": "Bohemond"
+  },
+  {
+    "question": "When did the Normans attack Dyrrachium?",
+    "expected": "1185"
+  },
+  {
+    "question": "What was the naval base called?",
+    "expected": "Dyrrachium"
+  },
+  {
+    "question": "Who did Emma Marry?",
+    "expected": "King Ethelred II"
+  },
+  {
+    "question": "Who was Emma's brother?",
+    "expected": "Duke Richard II"
+  },
+  {
+    "question": "Who was Edward the Confessor's half-brother?",
+    "expected": "Harthacnut"
+  },
+  {
+    "question": "When did Edward return?",
+    "expected": "1041"
+  },
+  {
+    "question": "Where did Harold II die?",
+    "expected": "Battle of Hastings"
+  },
+  {
+    "question": "Who killed Harold II?",
+    "expected": "William II"
+  },
+  {
+    "question": "What was the Anglo-Norman language's final form?",
+    "expected": "Modern English"
+  },
+  {
+    "question": "In what year did the Norman's invade at Bannow Bay?",
+    "expected": "1169"
+  },
+  {
+    "question": "What country did the Normans invade in 1169?",
+    "expected": "Ireland"
+  },
+  {
+    "question": "Who was Margaret's brother?",
+    "expected": "Edgar"
+  },
+  {
+    "question": "Who was Margaret's husband?",
+    "expected": "King Malcolm III of Scotland"
+  },
+  {
+    "question": "Who did Alexander I marry?",
+    "expected": "Sybilla of Normandy"
+  },
+  {
+    "question": "What culture's arrival in Scotland is know as the \"Davidian Revolution\"?",
+    "expected": "Norman"
+  },
+  {
+    "question": "Where was Ralph earl of?",
+    "expected": "Hereford"
+  },
+  {
+    "question": "Who was Ralph in charge of being at war with?",
+    "expected": "the Welsh"
+  },
+  {
+    "question": "What country was under the control of Norman barons?",
+    "expected": "Wales"
+  },
+  {
+    "question": "What year did Roger de Tosny fail to accomplish what he set out to do?",
+    "expected": "1018"
+  },
+  {
+    "question": "Who was in charge of the papal army in the War of Barbastro?",
+    "expected": "William of Montreuil"
+  },
+  {
+    "question": "When did the Siege of Antioch take place?",
+    "expected": "1097"
+  },
+  {
+    "question": "What was the name of Bohemond's nephew?",
+    "expected": "Tancred"
+  },
+  {
+    "question": "How long did Western Europe control Cyprus?",
+    "expected": "380 years"
+  },
+  {
+    "question": "What ruined Richard's plans to reach Acre?",
+    "expected": "a storm"
+  },
+  {
+    "question": "Who was Richard's fiancee?",
+    "expected": "Berengaria"
+  },
+  {
+    "question": "Who was Guy's Rival?",
+    "expected": "Conrad of Montferrat"
+  },
+  {
+    "question": "What were Isaac's chains made out of?",
+    "expected": "silver"
+  },
+  {
+    "question": "What continent are the Canarian Islands off the coast of?",
+    "expected": "Africa"
+  },
+  {
+    "question": "Who became the King of the Canary Islands?",
+    "expected": "Bethencourt"
+  },
+  {
+    "question": "Who bought the rights?",
+    "expected": "Enrique Pérez de Guzmán"
+  },
+  {
+    "question": "Where are Jersey and Guernsey",
+    "expected": "Channel Islands"
+  },
+  {
+    "question": "How many customaries does Norman customary law have?",
+    "expected": "two"
+  },
+  {
+    "question": "What is the Norman architecture idiom?",
+    "expected": "Romanesque"
+  },
+  {
+    "question": "What kind of arches does Norman architecture have?",
+    "expected": "rounded"
+  },
+  {
+    "question": "What architecture type came after Norman in England?",
+    "expected": "Early Gothic"
+  },
+  {
+    "question": "What architecture type came before Norman in England?",
+    "expected": "Anglo-Saxon"
+  },
+  {
+    "question": "When did the church reform begin?",
+    "expected": "early 11th century"
+  },
+  {
+    "question": "Who used the church to unify themselves?",
+    "expected": "dukes"
+  },
+  {
+    "question": "When were the French wars of religion?",
+    "expected": "16th century"
+  },
+  {
+    "question": "What kind of needlework was used in the creation of the Bayeux Tapestry?",
+    "expected": "embroidery"
+  },
+  {
+    "question": "What is Norman art's most well known piece?",
+    "expected": "Bayeux Tapestry"
+  },
+  {
+    "question": "What is the most important type of Norman art preserved in churches?",
+    "expected": "mosaics"
+  },
+  {
+    "question": "In what century did important classical music developments occur in Normandy?",
+    "expected": "11th"
+  },
+  {
+    "question": "Who were the two abbots at Fécamp Abbey?",
+    "expected": "William of Volpiano and John of Ravenna"
+  },
+  {
+    "question": "Where did the monks flee to?",
+    "expected": "southern Italy"
+  },
+  {
+    "question": "What monastery did the Saint-Evroul monks establish in Italy?",
+    "expected": "Latin monastery at Sant'Eufemia."
+  },
+  {
+    "question": "What branch of theoretical computer science deals with broadly classifying computational problems by difficulty and class of relationship?",
+    "expected": "Computational complexity theory"
+  },
+  {
+    "question": "By what main attribute are computational problems classified utilizing computational complexity theory?",
+    "expected": "inherent difficulty"
+  },
+  {
+    "question": "What measure of a computational problem broadly defines the inherent difficulty of the solution?",
+    "expected": "if its solution requires significant resources"
+  },
+  {
+    "question": "What method is used to intuitively assess or quantify the amount of resources required to solve a computational problem?",
+    "expected": "mathematical models of computation"
+  },
+  {
+    "question": "What two fields of theoretical computer science closely mirror computational complexity theory?",
+    "expected": "analysis of algorithms and computability theory"
+  },
+  {
+    "question": "What field of computer science analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem?",
+    "expected": "analysis of algorithms"
+  },
+  {
+    "question": "What is the name given to the input string of a computational problem?",
+    "expected": "problem instance"
+  },
+  {
+    "question": "In computational complexity theory, what is the term given to describe the baseline abstract question needing to be solved?",
+    "expected": "the problem"
+  },
+  {
+    "question": "By how many kilometers does the traveling salesman problem seek to classify a route between the 15 largest cities in Germany?",
+    "expected": "2000"
+  },
+  {
+    "question": "What is one example of an instance that the quantitative answer to the traveling salesman problem fails to answer?",
+    "expected": "round trip through all sites in Milan"
+  },
+  {
+    "question": "In a computational problem, what can be described as a string over an alphabet?",
+    "expected": "problem instance"
+  },
+  {
+    "question": "What is the name of the alphabet is most commonly used in a problem instance?",
+    "expected": "binary alphabet"
+  },
+  {
+    "question": "What kind of problems are one of the main topics studied in computational complexity theory?",
+    "expected": "Decision problems"
+  },
+  {
+    "question": "What are the two simple word responses to a decision problem?",
+    "expected": "yes or no"
+  },
+  {
+    "question": "What kind of graph is an example of an input used in a decision problem?",
+    "expected": "arbitrary graph"
+  },
+  {
+    "question": "What is the term for the set of all connected graphs related to this decision problem?",
+    "expected": "formal language"
+  },
+  {
+    "question": "A function problem is an example of what?",
+    "expected": "a computational problem"
+  },
+  {
+    "question": "Who gave their name to Normandy in the 1000's and 1100's",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "What type of major impact did the Norman dynasty have on modern Europe?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "What name comes from the English words Normans/Normanz?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "when did Nors encampments ivolve into destructive incursions?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "When did Rollo begin to arrive in Normandy?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "What was replace with the Norse religion?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who adopted the fuedel doctrines of the Normans?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who entered Italy soon after the Byzantine Empire?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who was the first Byzantine mercenary to serve with the Normans?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who joined Norman forces in the destruction of the Armenians?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Where were several Norman mercenary familes originate from?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who ultimatly drove the Byzantines out of Europe?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who did the Normans besiege in the 11th century?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who attacked Dyrrachium in the 11th century?",
+    "expected": "Not in the document. This information is not provided in the context."
+  },
+  {
+    "question": "Who married Cnut the Great?",
+    "expected": "Not in the document. This information is not provided in the context."
+  }
+]
