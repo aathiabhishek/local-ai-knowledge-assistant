@@ -1,16 +1,25 @@
 # 💬 Local AI Knowledge Assistant
 
-### A Two-Stage, Object-Oriented Offline RAG System & Technical Tutor
+### A Two-Stage, Object-Oriented RAG System & Technical Tutor
 
-A privacy-focused, document-aware local AI assistant and technical tutor that operates 100% offline on consumer hardware. The system runs an optimized, 4-bit quantized **Llama 3.1 8B Instruct (`Q4_K_M` GGUF)** model via `llama.cpp` locally, and implements a custom, framework-free two-stage hybrid retrieval funnel to deliver grounded, source-attributed answers with sub-100ms search latency.
+A privacy-focused, document-aware AI assistant and technical tutor designed to run local language models on consumer hardware.
+
+The system uses an optimized, 4-bit quantized **Llama 3.1 8B Instruct (`Q4_K_M` GGUF)** model through `llama.cpp` for local inference. It implements a custom, framework-free, two-stage hybrid retrieval pipeline combining **dense vector search (FAISS)** and **sparse keyword search (BM25)**, followed by **Reciprocal Rank Fusion (RRF)** and optional cross-encoder reranking.
+
+By grounding responses in retrieved document content, the assistant provides context-aware answers with source attribution while supporting document-based learning and technical Q&A.
 
 <p align="center">
-  <img src="https://shields.io" alt="Python">
-  <img src="https://shields.io" alt="Streamlit">
-  <img src="https://shields.io" alt="RAG">
-  <img src="https://shields.io" alt="Local inference">
-  <img src="https://shields.io" alt="Hybrid retrieval">
+  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/RAG-Hybrid%20Retrieval-6A5ACD?style=for-the-badge" alt="Hybrid RAG" />
+  <img src="https://img.shields.io/badge/LLM-Llama%203.1-0467DF?style=for-the-badge" alt="Llama 3.1" />
+  <img src="https://img.shields.io/badge/Inference-llama.cpp-2E8B57?style=for-the-badge" alt="llama.cpp" />
+  <img src="https://img.shields.io/badge/Search-FAISS%20%2B%20BM25-orange?style=for-the-badge" alt="Hybrid Search" />
 </p>
+
+---
+
+> **Privacy note:** Local inference can operate offline once the required model and dependencies are available. Optional Groq inference requires an internet connection and sends prompts to the external API. Deploying the application to Streamlit Community Cloud also means the app runs in a cloud environment rather than entirely on your own machine.
 
 ---
 
