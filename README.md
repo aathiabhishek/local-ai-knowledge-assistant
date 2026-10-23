@@ -167,9 +167,42 @@ The system was evaluated using an automated test harness (`evaluation/evaluate.p
 • Neural Reranker: Cross-Encoder Transformer (ms-marco-MiniLM-L-6-v2)
 • Document Extractors: PyMuPDF (fitz), python-docx (lxml)
 
-📁 Project Structure
+## 📁 Project Structure
 
-text local-ai-knowledge-assistant/ ├── app.py                              # Core dark-theme Streamlit interface & view layer ├── requirements.txt                    # Project execution lockfile ├── README.md                           # Technical documentation & portfolio overview ├── models/ │   └── Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf  # Git-ignored local GGUF model binary ├── src/ │   ├── __init__.py │   ├── config.py                       # Environment-aware parameters & hardware layout │   ├── ingestion.py                    # Spatial PDF/DOCX structural chunking engine │   ├── retriever.py                    # Stage 1 (FAISS+BM25) + RRF + Stage 2 Cross-Encoder │   └── llm.py                          # Object-oriented parent template & sub-class drivers └── evaluation/ ├── build_large_benchmark.py        # SQuAD v2 corpus & 100-query test harness builder ├── evaluate.py                     # Metric logging evaluator with citation-stripping ├── question.json                   # 100 benchmark queries (85 answerable, 15 unanswerable) └── results.json                    # Detailed per-query evaluation report output 
+```text
+local-ai-knowledge-assistant/
+├── app.py                                  # Streamlit UI and application entry point
+├── requirements.txt                        # Python dependencies
+├── README.md                               # Project documentation and portfolio overview
+│
+├── models/
+│   └── Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+│                                            # Local quantized GGUF model (excluded from Git)
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py                           # Environment variables and runtime configuration
+│   ├── ingestion.py                        # PDF/DOCX ingestion and structural text chunking
+│   ├── retriever.py                        # FAISS + BM25, RRF fusion, and cross-encoder reranking
+│   └── llm.py                              # Object-oriented LLM abstraction and inference backends
+│
+└── evaluation/
+    ├── build_large_benchmark.py             # Builds the SQuAD v2 benchmark and test harness
+    ├── evaluate.py                          # Evaluates retrieval/answer quality and logs metrics
+    ├── question.json                        # 100 benchmark queries: 85 answerable, 15 unanswerable
+    └── results.json                         # Generated per-query evaluation results
+```
+
+### 🔍 Key Components
+
+- **`app.py`** — Provides the Streamlit interface and connects user interactions to the assistant's functionality.
+- **`src/ingestion.py`** — Processes supported documents and divides their content into chunks for retrieval.
+- **`src/retriever.py`** — Implements dense retrieval with FAISS, sparse retrieval with BM25, Reciprocal Rank Fusion (RRF), and optional cross-encoder reranking.
+- **`src/llm.py`** — Organizes model interaction through an object-oriented design, supporting local inference and an optional cloud inference backend.
+- **`src/config.py`** — Centralizes configurable settings, including model paths, retrieval parameters, chunk sizes, and inference settings.
+- **`evaluation/`** — Contains benchmark construction, evaluation scripts, test questions, and generated results.
+
+**Note:** The GGUF model binary should remain outside version control because of its size. Add it to `.gitignore` and document how to download or configure the model locally.
 
 🚀 Virtual Environment & Installation
 
