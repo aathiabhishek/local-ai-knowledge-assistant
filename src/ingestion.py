@@ -91,17 +91,27 @@ def _make_docs(
     ]
 
 
-def _load_pdf(file_bytes: bytes, filename: str) -> List[Dict]:
+def _load_pdf(file_bytes: bytes, filename: str, overlap: int = CHUNK_OVERLAP) -> List[Dict]:
     documents = []
+    prev_tail = ""
 
     with pymupdf.open(stream=file_bytes, filetype="pdf") as pdf:
         for page_number, page in enumerate(pdf, start=1):
-            text = page.get_text("text", sort=True)
+            text = _clean_text(page.get_text("text", sort=True))
+            if not text:
+                continue
+
+            # Prepend the tail of the previous page so cross-page sentences stay intact
+            combined_text = f"{prev_tail}\n{text}".strip() if prev_tail else text
             documents.extend(
-                _make_docs(_chunk_text(text), filename, page_number)
+                _make_docs(_chunk_text(combined_text), filename, page_number)
             )
 
+            # Save the last `overlap` characters for the next page
+            prev_tail = text[-overlap:] if len(text) > overlap else text
+
     return documents
+
 
 
 def _iter_docx_blocks(document):
@@ -150,6 +160,8 @@ def _load_docx(file_bytes: bytes, filename: str) -> List[Dict]:
 
     # Blank line between blocks so chunking prefers paragraph boundaries.
     return _make_docs(_chunk_text("\n\n".join(blocks)), filename)
+
+
 
 
 def _load_text(file_bytes: bytes, filename: str) -> List[Dict]:
