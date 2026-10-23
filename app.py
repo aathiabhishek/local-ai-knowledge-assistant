@@ -3,6 +3,9 @@ import textwrap
 from pathlib import Path
 from datetime import datetime
 import time
+import os
+
+from dotenv import load_dotenv
 
 from src.config import (
     APP_TITLE,
@@ -12,7 +15,7 @@ from src.config import (
     MAX_HISTORY_MESSAGES,
 )
 
-from src.llm import LocalLLM
+from src.llm import GroqLLM, LocalLLM, MAX_CHUNKS
 from src.ingestion import load_uploaded_files
 from src.retriever import HybridRetriever
 
@@ -36,6 +39,14 @@ def render_html(html: str) -> None:
     )
 
 
+# Load local environment variables and the external stylesheet.
+load_dotenv(Path(__file__).resolve().parent / ".env")
+
+CSS_PATH = Path(__file__).resolve().parent / "styles.css"
+if CSS_PATH.exists():
+    st.markdown(f"<style>{CSS_PATH.read_text(encoding='utf-8')}</style>", unsafe_allow_html=True)
+
+
 # Typing indicator markup, defined flush-left at module level so
 # it never needs dedenting and can be reused for both RAG search
 # and generation status states.
@@ -46,387 +57,7 @@ TYPING_INDICATOR = """<div class="typing"><span></span><span></span><span></span
 # CUSTOM CSS
 # ============================================================
 
-render_html(
-    """
-    <style>
 
-    /* ========================================================
-       GLOBAL
-       ======================================================== */
-
-    .stApp {
-        background: #0e1117;
-    }
-
-    .main .block-container {
-        max-width: 900px;
-        padding-top: 0.5rem;
-        padding-bottom: 7rem;
-    }
-
-    header {
-        visibility: hidden;
-    }
-
-
-    /* ========================================================
-       SIDEBAR
-       ======================================================== */
-
-    section[data-testid="stSidebar"] {
-        background: #11151d;
-        border-right: 1px solid #252b36;
-    }
-
-    section[data-testid="stSidebar"] > div {
-        padding-top: 1.5rem;
-    }
-
-    .sidebar-brand {
-        padding: 8px 5px 20px 5px;
-    }
-
-    .sidebar-brand-title {
-        font-size: 21px;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 4px;
-    }
-
-    .sidebar-brand-subtitle {
-        font-size: 12px;
-        color: #8b949e;
-    }
-
-    .sidebar-section {
-        font-size: 12px;
-        font-weight: 700;
-        color: #8b949e;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-top: 18px;
-        margin-bottom: 10px;
-    }
-
-    .status-card {
-        background: #171c25;
-        border: 1px solid #272e3a;
-        border-radius: 12px;
-        padding: 12px;
-        margin-bottom: 10px;
-    }
-
-    .status-row {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 13px;
-        color: #d7dde5;
-        margin: 5px 0;
-    }
-
-    .status-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        display: inline-block;
-        flex-shrink: 0;
-    }
-
-    .status-green { background: #3fb950; }
-    .status-yellow { background: #d29922; }
-    .status-red { background: #f85149; }
-
-
-    /* ========================================================
-       CHAT HEADER BAR (real-chatbot feel)
-       ======================================================== */
-
-    .chat-header {
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 18px;
-        margin: 0.5rem 0 0.5rem 0;
-        background: #151a22;
-        border: 1px solid #252b36;
-        border-radius: 16px;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
-    }
-
-    .chat-header-avatar {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #6e56cf, #8b5cf6);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        flex-shrink: 0;
-    }
-
-    .chat-header-name {
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 15px;
-    }
-
-    .chat-header-status {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 12px;
-        color: #8b949e;
-        margin-top: 2px;
-    }
-
-
-    /* ========================================================
-       CHAT MESSAGES — bubble styling
-       ======================================================== */
-
-    [data-testid="stChatMessage"] {
-        background: transparent;
-        border: none;
-        padding: 0 !important;
-        margin: 4px 0;
-        max-width: 100%;
-    }
-
-    /* Marker + :has() hook: a zero-height marker div is rendered
-       immediately before each st.chat_message() call, tagged with
-       the message role. This lets pure CSS reposition/recolor the
-       *following* chat bubble without touching Python layout code,
-       since Streamlit gives every top-level call its own wrapper
-       sibling. Falls back gracefully to default styling on older
-       browsers without :has() support. */
-
-    div:has(> div > .row-marker-user) + div [data-testid="stChatMessage"] {
-        flex-direction: row-reverse;
-    }
-
-    div:has(> div > .row-marker-user) + div [data-testid="stChatMessage"] [data-testid="stChatMessageContent"],
-    div:has(> div > .row-marker-user) + div [data-testid="stChatMessage"] > div:nth-child(2) {
-        background: linear-gradient(135deg, #6e56cf, #7c5cdb);
-        color: #ffffff;
-        border-radius: 18px 18px 4px 18px;
-        padding: 10px 15px !important;
-        max-width: 75%;
-        margin-left: auto;
-    }
-
-    div:has(> div > .row-marker-bot) + div [data-testid="stChatMessage"] [data-testid="stChatMessageContent"],
-    div:has(> div > .row-marker-bot) + div [data-testid="stChatMessage"] > div:nth-child(2) {
-        background: #1c222c;
-        border: 1px solid #272e3a;
-        color: #e6edf3;
-        border-radius: 18px 18px 18px 4px;
-        padding: 10px 15px !important;
-        max-width: 75%;
-    }
-
-    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] {
-        font-size: 14.5px;
-        line-height: 1.6;
-    }
-
-    [data-testid*="Avatar"] {
-        width: 30px !important;
-        height: 30px !important;
-        font-size: 15px !important;
-    }
-
-    .msg-timestamp {
-        font-size: 10.5px;
-        color: #5c6472;
-        margin: -2px 0 2px 44px;
-    }
-
-    div:has(> div > .row-marker-user) + div + div .msg-timestamp {
-        text-align: right;
-        margin: -2px 44px 2px 0;
-    }
-
-
-    /* ========================================================
-       TYPING INDICATOR
-       ======================================================== */
-
-    .typing {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        padding: 10px 15px;
-        background: #1c222c;
-        border: 1px solid #272e3a;
-        border-radius: 18px 18px 18px 4px;
-    }
-
-    .typing span {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #8b949e;
-        animation: typing-bounce 1.2s infinite ease-in-out;
-    }
-
-    .typing span:nth-child(2) { animation-delay: 0.15s; }
-    .typing span:nth-child(3) { animation-delay: 0.3s; }
-
-    @keyframes typing-bounce {
-        0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
-        30% { transform: translateY(-4px); opacity: 1; }
-    }
-
-
-    /* ========================================================
-       CHAT INPUT
-       ======================================================== */
-
-    [data-testid="stChatInput"] {
-        bottom: 20px;
-    }
-
-    [data-testid="stChatInput"] textarea {
-        background: #171c25 !important;
-        border: 1px solid #303846 !important;
-        border-radius: 22px !important;
-        color: #ffffff !important;
-        padding: 14px 18px !important;
-    }
-
-    [data-testid="stChatInput"] textarea::placeholder {
-        color: #6e7681 !important;
-    }
-
-    [data-testid="stChatInput"] textarea:focus {
-        border-color: #6e56cf !important;
-        box-shadow: 0 0 0 1px #6e56cf !important;
-    }
-
-
-    /* ========================================================
-       SOURCE CARDS
-       ======================================================== */
-
-    .source-card {
-        background: #151a22;
-        border: 1px solid #282f3a;
-        border-radius: 10px;
-        padding: 10px 12px;
-        margin: 6px 0;
-        font-size: 12px;
-        color: #aeb7c4;
-    }
-
-    .source-title {
-        color: #e6edf3;
-        font-weight: 600;
-    }
-
-
-    /* ========================================================
-       DOCUMENT CARDS
-       ======================================================== */
-
-    .document-card {
-        background: #171c25;
-        border: 1px solid #272e3a;
-        border-radius: 10px;
-        padding: 10px 12px;
-        margin: 5px 0;
-        font-size: 12px;
-        color: #c9d1d9;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-
-    /* ========================================================
-       HERO / SUGGESTIONS
-       ======================================================== */
-
-    .hero {
-        text-align: center;
-        padding: 50px 20px 30px 20px;
-    }
-
-    .hero-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 20px;
-        background: linear-gradient(135deg, #6e56cf, #8b5cf6);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 18px auto;
-        font-size: 30px;
-        box-shadow: 0 12px 40px rgba(111, 86, 207, 0.25);
-    }
-
-    .hero-title {
-        font-size: 28px;
-        font-weight: 750;
-        color: #ffffff;
-        margin-bottom: 8px;
-    }
-
-    .hero-subtitle {
-        color: #8b949e;
-        font-size: 14px;
-        max-width: 600px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    .suggestion-label {
-        color: #8b949e;
-        font-size: 12px;
-        text-align: center;
-        margin-top: 18px;
-        margin-bottom: 8px;
-    }
-
-
-    /* ========================================================
-       RESPONSE METADATA
-       ======================================================== */
-
-    .response-meta {
-        color: #6e7681;
-        font-size: 11px;
-        margin: 2px 0 0 4px;
-    }
-
-
-    /* ========================================================
-       MOBILE
-       ======================================================== */
-
-    @media (max-width: 768px) {
-
-        .main .block-container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        [data-testid="stChatMessage"] [data-testid="stChatMessageContent"],
-        [data-testid="stChatMessage"] > div:nth-child(2) {
-            max-width: 88% !important;
-        }
-
-        .hero-title { font-size: 24px; }
-        .hero-subtitle { font-size: 13px; }
-    }
-
-    </style>
-    """
-)
 
 
 # ============================================================
@@ -448,51 +79,64 @@ if "indexed_files" not in st.session_state:
 if "llm" not in st.session_state:
     st.session_state.llm = None
 
+if "model_backend" not in st.session_state:
+    st.session_state.model_backend = None
+
 if "pending_prompt" not in st.session_state:
     st.session_state.pending_prompt = None
 
 
 # ============================================================
-# LOAD LOCAL LLM
+# LOAD MODEL
 # ------------------------------------------------------------
-# Runs above the sidebar/header so st.session_state.llm is fully
-# resolved before anything reads it for status display.
-# ============================================================
+# Prefer a local GGUF model when present. Otherwise, use Groq if
+# GROQ_API_KEY is available in .env or Streamlit Secrets.
+# ------------------------------------------------------------
+
+try:
+    if "GROQ_API_KEY" in st.secrets and not os.getenv("GROQ_API_KEY"):
+        os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+except Exception:
+    # Streamlit Secrets may be unavailable during local development.
+    pass
+
 
 if st.session_state.llm is None:
+    has_local_gguf = Path(MODEL_PATH).exists()
+    groq_api_key = os.getenv("GROQ_API_KEY", "").strip()
 
-    if not Path(MODEL_PATH).exists():
+    local_load_error = None
+    if has_local_gguf:
+        with st.spinner("Loading local Llama model..."):
+            try:
+                st.session_state.llm = LocalLLM(MODEL_PATH)
+                st.session_state.model_backend = "local"
+            except Exception as exc:
+                local_load_error = exc
+                # If the local model exists but cannot initialize, try Groq below.
 
-        st.error(
-            f"""
-            **Local model not found**
-
-            Expected model:
-
-            `{MODEL_PATH}`
-
-            Update `MODEL_PATH` in
-            `src/config.py` or place your
-            Mistral GGUF model at the configured location.
-            """
+    if st.session_state.llm is None and groq_api_key:
+        with st.spinner("Local model unavailable. Connecting to Groq..."):
+            try:
+                st.session_state.llm = GroqLLM(groq_api_key)
+                st.session_state.model_backend = "groq"
+                if local_load_error:
+                    st.info("The local model could not be loaded, so the app switched to Groq.")
+            except Exception as exc:
+                st.error(f"Could not initialize Groq: {exc}")
+                if local_load_error:
+                    st.caption(f"Local model error: {local_load_error}")
+    elif st.session_state.llm is None:
+        if local_load_error:
+            st.error(f"Could not load the local model: {local_load_error}")
+        st.warning(
+            "No usable model is configured. Add `GROQ_API_KEY=...` to the project "
+            "`.env` file (Groq fallback uses `openai/gpt-oss-120b` by default), "
+            "or place a working GGUF model at "
+            f"`{MODEL_PATH}`."
         )
 
-    else:
 
-        with st.spinner("Loading Llama-3.1 model..."):
-
-            try:
-
-                st.session_state.llm = LocalLLM(MODEL_PATH)
-
-            except Exception as exc:
-
-                st.error(
-                    f"Could not load the local model: {exc}"
-                )
-
-
-# ============================================================
 # SIDEBAR
 # ============================================================
 
@@ -517,10 +161,29 @@ with st.sidebar:
 
     render_html('<div class="sidebar-section">System</div>')
 
-    model_exists = Path(MODEL_PATH).exists()
+    model_exists = Path(MODEL_PATH).exists() or bool(os.getenv("GROQ_API_KEY"))
+
     model_loaded = st.session_state.llm is not None
 
-    if model_loaded:
+    if model_loaded and st.session_state.model_backend == "groq":
+        active_model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+        model_status = f"""
+        <div class="status-row">
+            <span class="status-dot status-green"></span>
+            <span><strong>Groq API active</strong></span>
+        </div>
+        <div class="model-detail">Cloud model: {active_model}</div>
+        """
+    elif model_loaded and st.session_state.model_backend == "local":
+        local_model_name = Path(MODEL_PATH).name
+        model_status = f"""
+        <div class="status-row">
+            <span class="status-dot status-green"></span>
+            <span><strong>Local model active</strong></span>
+        </div>
+        <div class="model-detail">On-device: {local_model_name}</div>
+        """
+    elif model_loaded:
         model_status = """
         <div class="status-row">
             <span class="status-dot status-green"></span>
@@ -654,8 +317,12 @@ with st.sidebar:
             st.rerun()
 
     st.divider()
-    st.caption("🔒 Your model and documents run locally.")
-    st.caption("No uploaded documents are sent to an external API.")
+    if getattr(st.session_state, "model_backend", None) == "groq":
+        st.caption("☁️ Responses use Groq's hosted API.")
+        st.caption("Relevant prompts and retrieved document excerpts are sent to Groq.")
+    else:
+        st.caption("🔒 The model runs locally on this machine.")
+        st.caption("Documents are processed locally by the app.")
 
 
 # ============================================================
@@ -663,7 +330,14 @@ with st.sidebar:
 # ============================================================
 
 _header_dot = "status-green" if st.session_state.llm is not None else "status-red"
-_header_label = "Online" if st.session_state.llm is not None else "Offline"
+if st.session_state.llm is None:
+    _header_label = "Offline · No model connected"
+elif st.session_state.model_backend == "groq":
+    _header_label = f"Online · Groq API · {os.getenv('GROQ_MODEL', 'openai/gpt-oss-120b')}"
+elif st.session_state.model_backend == "local":
+    _header_label = f"Online · Local model · {Path(MODEL_PATH).name}"
+else:
+    _header_label = "Online · Model connected"
 
 render_html(
     f"""
@@ -857,8 +531,7 @@ if prompt:
             if st.session_state.llm is None:
 
                 answer = (
-                    "The local Mistral model is not loaded. "
-                    "Please check the model path and installation."
+                    "No language model is connected. Check your local model path or GROQ_API_KEY configuration."
                 )
                 sources = []
                 status.empty()
@@ -876,20 +549,23 @@ if prompt:
 
                     status.markdown(TYPING_INDICATOR, unsafe_allow_html=True)
 
+                    # Both backends share the same RAG preparation rules and
+                    # use the same top-N chunks as the shared prompt builder.
+                    retrieved_for_answer = retrieved[:MAX_CHUNKS]
                     answer = st.session_state.llm.generate_rag_answer(
                         question=prompt,
-                        retrieved_chunks=retrieved,
+                        retrieved_chunks=retrieved_for_answer,
                         history=st.session_state.messages[-MAX_HISTORY_MESSAGES:-1],
                         temperature=temperature,
                     )
 
                     sources = [
                         {
-                            "source": item["source"],
+                            "source": item.get("source", "Unknown source"),
                             "page": item.get("page"),
-                            "score": item["score"],
+                            "score": item.get("score"),
                         }
-                        for item in retrieved
+                        for item in retrieved_for_answer
                     ]
 
                     status.empty()
