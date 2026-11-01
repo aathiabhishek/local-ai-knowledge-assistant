@@ -1,0 +1,772 @@
+[
+  {
+    "question": "In what country is Normandy located?",
+    "expected": "France",
+    "relevant_sources": [
+      "doc_001_Normans.md"
+    ],
+    "squad_id": "56ddde6b9a695914005b9628"
+  },
+  {
+    "question": "When were the Normans in Normandy?",
+    "expected": "10th and 11th centuries",
+    "relevant_sources": [
+      "doc_001_Normans.md"
+    ],
+    "squad_id": "56ddde6b9a695914005b9629"
+  },
+  {
+    "question": "Who was the duke in the battle of Hastings?",
+    "expected": "William the Conqueror",
+    "relevant_sources": [
+      "doc_002_Normans.md"
+    ],
+    "squad_id": "56dddf4066d3e219004dad5f"
+  },
+  {
+    "question": "Who ruled the duchy of Normandy",
+    "expected": "Richard I",
+    "relevant_sources": [
+      "doc_002_Normans.md"
+    ],
+    "squad_id": "56dddf4066d3e219004dad60"
+  },
+  {
+    "question": "What is the original meaning of the word Norman?",
+    "expected": "Viking",
+    "relevant_sources": [
+      "doc_003_Normans.md"
+    ],
+    "squad_id": "56dde0379a695914005b9636"
+  },
+  {
+    "question": "When was the Latin version of the word Norman first recorded?",
+    "expected": "9th century",
+    "relevant_sources": [
+      "doc_003_Normans.md"
+    ],
+    "squad_id": "56dde0379a695914005b9637"
+  },
+  {
+    "question": "When was the Duchy of Normandy founded?",
+    "expected": "911",
+    "relevant_sources": [
+      "doc_004_Normans.md"
+    ],
+    "squad_id": "56dde0ba66d3e219004dad75"
+  },
+  {
+    "question": "Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?",
+    "expected": "King Charles III",
+    "relevant_sources": [
+      "doc_004_Normans.md"
+    ],
+    "squad_id": "56dde0ba66d3e219004dad76"
+  },
+  {
+    "question": "Who upon arriving gave the original viking settlers a common identity?",
+    "expected": "Rollo",
+    "relevant_sources": [
+      "doc_005_Normans.md"
+    ],
+    "squad_id": "56dde1d966d3e219004dad8d"
+  },
+  {
+    "question": "What was the Norman religion?",
+    "expected": "Catholicism",
+    "relevant_sources": [
+      "doc_006_Normans.md"
+    ],
+    "squad_id": "56dde27d9a695914005b9651"
+  },
+  {
+    "question": "What part of France were the Normans located?",
+    "expected": "north",
+    "relevant_sources": [
+      "doc_006_Normans.md"
+    ],
+    "squad_id": "56dde27d9a695914005b9652"
+  },
+  {
+    "question": "What was one of the Norman's major exports?",
+    "expected": "fighting horsemen",
+    "relevant_sources": [
+      "doc_007_Normans.md"
+    ],
+    "squad_id": "56dde2fa66d3e219004dad9b"
+  },
+  {
+    "question": "Who was the Normans' main enemy in Italy, the Byzantine Empire and Armenia?",
+    "expected": "Seljuk Turks",
+    "relevant_sources": [
+      "doc_008_Normans.md"
+    ],
+    "squad_id": "56de0f6a4396321400ee257f"
+  },
+  {
+    "question": "When did Herve serve as a Byzantine general?",
+    "expected": "1050s",
+    "relevant_sources": [
+      "doc_009_Normans.md"
+    ],
+    "squad_id": "56de0ffd4396321400ee258d"
+  },
+  {
+    "question": "When did Robert Crispin go up against the Turks?",
+    "expected": "1060s",
+    "relevant_sources": [
+      "doc_009_Normans.md"
+    ],
+    "squad_id": "56de0ffd4396321400ee258e"
+  },
+  {
+    "question": "What was the name of the Norman castle?",
+    "expected": "Afranji",
+    "relevant_sources": [
+      "doc_010_Normans.md"
+    ],
+    "squad_id": "56de10b44396321400ee2593"
+  },
+  {
+    "question": "Who was the leader when the Franks entered the Euphrates valley?",
+    "expected": "Oursel",
+    "relevant_sources": [
+      "doc_010_Normans.md"
+    ],
+    "squad_id": "56de10b44396321400ee2594"
+  },
+  {
+    "question": "What were the origins of the Raouliii family?",
+    "expected": "Norman mercenary",
+    "relevant_sources": [
+      "doc_011_Normans.md"
+    ],
+    "squad_id": "56de11154396321400ee25aa"
+  },
+  {
+    "question": "What was the name of the count of Apulia",
+    "expected": "Robert Guiscard",
+    "relevant_sources": [
+      "doc_012_Normans.md"
+    ],
+    "squad_id": "56de148dcffd8e1900b4b5bc"
+  },
+  {
+    "question": "When did Dyrrachium  fall to the Normans?",
+    "expected": "1082",
+    "relevant_sources": [
+      "doc_012_Normans.md"
+    ],
+    "squad_id": "56de148dcffd8e1900b4b5bd"
+  },
+  {
+    "question": "Where did the Normans and Byzantines sign the peace treaty?",
+    "expected": "Deabolis",
+    "relevant_sources": [
+      "doc_013_Normans.md"
+    ],
+    "squad_id": "56de15104396321400ee25b7"
+  },
+  {
+    "question": "Who was Robert's son?",
+    "expected": "Bohemond",
+    "relevant_sources": [
+      "doc_013_Normans.md"
+    ],
+    "squad_id": "56de15104396321400ee25b8"
+  },
+  {
+    "question": "When did the Normans attack Dyrrachium?",
+    "expected": "1185",
+    "relevant_sources": [
+      "doc_014_Normans.md"
+    ],
+    "squad_id": "56de1563cffd8e1900b4b5c2"
+  },
+  {
+    "question": "What was the naval base called?",
+    "expected": "Dyrrachium",
+    "relevant_sources": [
+      "doc_014_Normans.md"
+    ],
+    "squad_id": "56de1563cffd8e1900b4b5c3"
+  },
+  {
+    "question": "Who did Emma Marry?",
+    "expected": "King Ethelred II",
+    "relevant_sources": [
+      "doc_015_Normans.md"
+    ],
+    "squad_id": "56de15dbcffd8e1900b4b5c8"
+  },
+  {
+    "question": "Who was Emma's brother?",
+    "expected": "Duke Richard II",
+    "relevant_sources": [
+      "doc_015_Normans.md"
+    ],
+    "squad_id": "56de15dbcffd8e1900b4b5c9"
+  },
+  {
+    "question": "Who was Edward the Confessor's half-brother?",
+    "expected": "Harthacnut",
+    "relevant_sources": [
+      "doc_016_Normans.md"
+    ],
+    "squad_id": "56de1645cffd8e1900b4b5d0"
+  },
+  {
+    "question": "When did Edward return?",
+    "expected": "1041",
+    "relevant_sources": [
+      "doc_016_Normans.md"
+    ],
+    "squad_id": "56de1645cffd8e1900b4b5d1"
+  },
+  {
+    "question": "Where did Harold II die?",
+    "expected": "Battle of Hastings",
+    "relevant_sources": [
+      "doc_017_Normans.md"
+    ],
+    "squad_id": "56de16ca4396321400ee25c5"
+  },
+  {
+    "question": "Who killed Harold II?",
+    "expected": "William II",
+    "relevant_sources": [
+      "doc_017_Normans.md"
+    ],
+    "squad_id": "56de16ca4396321400ee25c6"
+  },
+  {
+    "question": "What was the Anglo-Norman language's final form?",
+    "expected": "Modern English",
+    "relevant_sources": [
+      "doc_018_Normans.md"
+    ],
+    "squad_id": "56de1728cffd8e1900b4b5d7"
+  },
+  {
+    "question": "In what year did the Norman's invade at Bannow Bay?",
+    "expected": "1169",
+    "relevant_sources": [
+      "doc_019_Normans.md"
+    ],
+    "squad_id": "56de179dcffd8e1900b4b5da"
+  },
+  {
+    "question": "What country did the Normans invade in 1169?",
+    "expected": "Ireland",
+    "relevant_sources": [
+      "doc_019_Normans.md"
+    ],
+    "squad_id": "56de179dcffd8e1900b4b5db"
+  },
+  {
+    "question": "Who was Margaret's brother?",
+    "expected": "Edgar",
+    "relevant_sources": [
+      "doc_020_Normans.md"
+    ],
+    "squad_id": "56de17f9cffd8e1900b4b5e0"
+  },
+  {
+    "question": "Who was Margaret's husband?",
+    "expected": "King Malcolm III of Scotland",
+    "relevant_sources": [
+      "doc_020_Normans.md"
+    ],
+    "squad_id": "56de17f9cffd8e1900b4b5e1"
+  },
+  {
+    "question": "Who did Alexander I marry?",
+    "expected": "Sybilla of Normandy",
+    "relevant_sources": [
+      "doc_021_Normans.md"
+    ],
+    "squad_id": "56de3cd0cffd8e1900b4b6be"
+  },
+  {
+    "question": "What culture's arrival in Scotland is know as the \"Davidian Revolution\"?",
+    "expected": "Norman",
+    "relevant_sources": [
+      "doc_021_Normans.md"
+    ],
+    "squad_id": "56de3cd0cffd8e1900b4b6bf"
+  },
+  {
+    "question": "Where was Ralph earl of?",
+    "expected": "Hereford",
+    "relevant_sources": [
+      "doc_022_Normans.md"
+    ],
+    "squad_id": "56de3d594396321400ee26ca"
+  },
+  {
+    "question": "Who was Ralph in charge of being at war with?",
+    "expected": "the Welsh",
+    "relevant_sources": [
+      "doc_022_Normans.md"
+    ],
+    "squad_id": "56de3d594396321400ee26cb"
+  },
+  {
+    "question": "What country was under the control of Norman barons?",
+    "expected": "Wales",
+    "relevant_sources": [
+      "doc_023_Normans.md"
+    ],
+    "squad_id": "56de3dbacffd8e1900b4b6d2"
+  },
+  {
+    "question": "What year did Roger de Tosny fail to accomplish what he set out to do?",
+    "expected": "1018",
+    "relevant_sources": [
+      "doc_024_Normans.md"
+    ],
+    "squad_id": "56de3e414396321400ee26d8"
+  },
+  {
+    "question": "Who was in charge of the papal army in the War of Barbastro?",
+    "expected": "William of Montreuil",
+    "relevant_sources": [
+      "doc_024_Normans.md"
+    ],
+    "squad_id": "56de3e414396321400ee26d9"
+  },
+  {
+    "question": "When did the Siege of Antioch take place?",
+    "expected": "1097",
+    "relevant_sources": [
+      "doc_025_Normans.md"
+    ],
+    "squad_id": "56de3ebc4396321400ee26e6"
+  },
+  {
+    "question": "What was the name of Bohemond's nephew?",
+    "expected": "Tancred",
+    "relevant_sources": [
+      "doc_025_Normans.md"
+    ],
+    "squad_id": "56de3ebc4396321400ee26e7"
+  },
+  {
+    "question": "How long did Western Europe control Cyprus?",
+    "expected": "380 years",
+    "relevant_sources": [
+      "doc_026_Normans.md"
+    ],
+    "squad_id": "56de3efccffd8e1900b4b6fe"
+  },
+  {
+    "question": "What ruined Richard's plans to reach Acre?",
+    "expected": "a storm",
+    "relevant_sources": [
+      "doc_027_Normans.md"
+    ],
+    "squad_id": "56de3f784396321400ee26fa"
+  },
+  {
+    "question": "Who was Richard's fiancee?",
+    "expected": "Berengaria",
+    "relevant_sources": [
+      "doc_027_Normans.md"
+    ],
+    "squad_id": "56de3f784396321400ee26fb"
+  },
+  {
+    "question": "Who was Guy's Rival?",
+    "expected": "Conrad of Montferrat",
+    "relevant_sources": [
+      "doc_028_Normans.md"
+    ],
+    "squad_id": "56de40da4396321400ee2708"
+  },
+  {
+    "question": "What were Isaac's chains made out of?",
+    "expected": "silver",
+    "relevant_sources": [
+      "doc_028_Normans.md"
+    ],
+    "squad_id": "56de40da4396321400ee2709"
+  },
+  {
+    "question": "What continent are the Canarian Islands off the coast of?",
+    "expected": "Africa",
+    "relevant_sources": [
+      "doc_029_Normans.md"
+    ],
+    "squad_id": "56de49564396321400ee277a"
+  },
+  {
+    "question": "Who became the King of the Canary Islands?",
+    "expected": "Bethencourt",
+    "relevant_sources": [
+      "doc_030_Normans.md"
+    ],
+    "squad_id": "56de49a8cffd8e1900b4b7a7"
+  },
+  {
+    "question": "Who bought the rights?",
+    "expected": "Enrique Pérez de Guzmán",
+    "relevant_sources": [
+      "doc_030_Normans.md"
+    ],
+    "squad_id": "56de49a8cffd8e1900b4b7a8"
+  },
+  {
+    "question": "Where are Jersey and Guernsey",
+    "expected": "Channel Islands",
+    "relevant_sources": [
+      "doc_031_Normans.md"
+    ],
+    "squad_id": "56de4a474396321400ee2786"
+  },
+  {
+    "question": "How many customaries does Norman customary law have?",
+    "expected": "two",
+    "relevant_sources": [
+      "doc_031_Normans.md"
+    ],
+    "squad_id": "56de4a474396321400ee2787"
+  },
+  {
+    "question": "What is the Norman architecture idiom?",
+    "expected": "Romanesque",
+    "relevant_sources": [
+      "doc_032_Normans.md"
+    ],
+    "squad_id": "56de4a89cffd8e1900b4b7bd"
+  },
+  {
+    "question": "What kind of arches does Norman architecture have?",
+    "expected": "rounded",
+    "relevant_sources": [
+      "doc_032_Normans.md"
+    ],
+    "squad_id": "56de4a89cffd8e1900b4b7be"
+  },
+  {
+    "question": "What architecture type came after Norman in England?",
+    "expected": "Early Gothic",
+    "relevant_sources": [
+      "doc_033_Normans.md"
+    ],
+    "squad_id": "56de4b074396321400ee2793"
+  },
+  {
+    "question": "What architecture type came before Norman in England?",
+    "expected": "Anglo-Saxon",
+    "relevant_sources": [
+      "doc_033_Normans.md"
+    ],
+    "squad_id": "56de4b074396321400ee2794"
+  },
+  {
+    "question": "When did the church reform begin?",
+    "expected": "early 11th century",
+    "relevant_sources": [
+      "doc_034_Normans.md"
+    ],
+    "squad_id": "56de4b5c4396321400ee2799"
+  },
+  {
+    "question": "Who used the church to unify themselves?",
+    "expected": "dukes",
+    "relevant_sources": [
+      "doc_034_Normans.md"
+    ],
+    "squad_id": "56de4b5c4396321400ee279a"
+  },
+  {
+    "question": "When were the French wars of religion?",
+    "expected": "16th century",
+    "relevant_sources": [
+      "doc_035_Normans.md"
+    ],
+    "squad_id": "56de4bb84396321400ee27a2"
+  },
+  {
+    "question": "What kind of needlework was used in the creation of the Bayeux Tapestry?",
+    "expected": "embroidery",
+    "relevant_sources": [
+      "doc_036_Normans.md"
+    ],
+    "squad_id": "56de4c324396321400ee27ab"
+  },
+  {
+    "question": "What is Norman art's most well known piece?",
+    "expected": "Bayeux Tapestry",
+    "relevant_sources": [
+      "doc_036_Normans.md"
+    ],
+    "squad_id": "56de4c324396321400ee27ac"
+  },
+  {
+    "question": "What is the most important type of Norman art preserved in churches?",
+    "expected": "mosaics",
+    "relevant_sources": [
+      "doc_037_Normans.md"
+    ],
+    "squad_id": "56de51244396321400ee27ef"
+  },
+  {
+    "question": "In what century did important classical music developments occur in Normandy?",
+    "expected": "11th",
+    "relevant_sources": [
+      "doc_038_Normans.md"
+    ],
+    "squad_id": "56de51c64396321400ee27f7"
+  },
+  {
+    "question": "Who were the two abbots at Fécamp Abbey?",
+    "expected": "William of Volpiano and John of Ravenna",
+    "relevant_sources": [
+      "doc_038_Normans.md"
+    ],
+    "squad_id": "56de51c64396321400ee27f8"
+  },
+  {
+    "question": "Where did the monks flee to?",
+    "expected": "southern Italy",
+    "relevant_sources": [
+      "doc_039_Normans.md"
+    ],
+    "squad_id": "56de52614396321400ee27fb"
+  },
+  {
+    "question": "What monastery did the Saint-Evroul monks establish in Italy?",
+    "expected": "Latin monastery at Sant'Eufemia.",
+    "relevant_sources": [
+      "doc_039_Normans.md"
+    ],
+    "squad_id": "56de52614396321400ee27fc"
+  },
+  {
+    "question": "What branch of theoretical computer science deals with broadly classifying computational problems by difficulty and class of relationship?",
+    "expected": "Computational complexity theory",
+    "relevant_sources": [
+      "doc_040_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e16182e3433e1400422e28"
+  },
+  {
+    "question": "By what main attribute are computational problems classified utilizing computational complexity theory?",
+    "expected": "inherent difficulty",
+    "relevant_sources": [
+      "doc_040_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e16182e3433e1400422e29"
+  },
+  {
+    "question": "What measure of a computational problem broadly defines the inherent difficulty of the solution?",
+    "expected": "if its solution requires significant resources",
+    "relevant_sources": [
+      "doc_041_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e16839cd28a01900c67887"
+  },
+  {
+    "question": "What method is used to intuitively assess or quantify the amount of resources required to solve a computational problem?",
+    "expected": "mathematical models of computation",
+    "relevant_sources": [
+      "doc_041_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e16839cd28a01900c67888"
+  },
+  {
+    "question": "What two fields of theoretical computer science closely mirror computational complexity theory?",
+    "expected": "analysis of algorithms and computability theory",
+    "relevant_sources": [
+      "doc_042_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e17644e3433e1400422f40"
+  },
+  {
+    "question": "What field of computer science analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem?",
+    "expected": "analysis of algorithms",
+    "relevant_sources": [
+      "doc_042_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e17644e3433e1400422f41"
+  },
+  {
+    "question": "What is the name given to the input string of a computational problem?",
+    "expected": "problem instance",
+    "relevant_sources": [
+      "doc_043_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e17a7ccd28a01900c679a1"
+  },
+  {
+    "question": "In computational complexity theory, what is the term given to describe the baseline abstract question needing to be solved?",
+    "expected": "the problem",
+    "relevant_sources": [
+      "doc_043_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e17a7ccd28a01900c679a2"
+  },
+  {
+    "question": "By how many kilometers does the traveling salesman problem seek to classify a route between the 15 largest cities in Germany?",
+    "expected": "2000",
+    "relevant_sources": [
+      "doc_044_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e17e6ee3433e1400422f7f"
+  },
+  {
+    "question": "What is one example of an instance that the quantitative answer to the traveling salesman problem fails to answer?",
+    "expected": "round trip through all sites in Milan",
+    "relevant_sources": [
+      "doc_044_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e17e6ee3433e1400422f80"
+  },
+  {
+    "question": "In a computational problem, what can be described as a string over an alphabet?",
+    "expected": "problem instance",
+    "relevant_sources": [
+      "doc_045_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e181d9e3433e1400422fa0"
+  },
+  {
+    "question": "What is the name of the alphabet is most commonly used in a problem instance?",
+    "expected": "binary alphabet",
+    "relevant_sources": [
+      "doc_045_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e181d9e3433e1400422fa1"
+  },
+  {
+    "question": "What kind of problems are one of the main topics studied in computational complexity theory?",
+    "expected": "Decision problems",
+    "relevant_sources": [
+      "doc_046_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e190bce3433e1400422fc8"
+  },
+  {
+    "question": "What are the two simple word responses to a decision problem?",
+    "expected": "yes or no",
+    "relevant_sources": [
+      "doc_046_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e190bce3433e1400422fc9"
+  },
+  {
+    "question": "What kind of graph is an example of an input used in a decision problem?",
+    "expected": "arbitrary graph",
+    "relevant_sources": [
+      "doc_047_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e19557e3433e1400422fee"
+  },
+  {
+    "question": "What is the term for the set of all connected graphs related to this decision problem?",
+    "expected": "formal language",
+    "relevant_sources": [
+      "doc_047_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e19557e3433e1400422ff0"
+  },
+  {
+    "question": "A function problem is an example of what?",
+    "expected": "a computational problem",
+    "relevant_sources": [
+      "doc_048_Computational_complexity_theory.md"
+    ],
+    "squad_id": "56e19724cd28a01900c679f6"
+  },
+  {
+    "question": "Who gave their name to Normandy in the 1000's and 1100's",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad39d53604f3c001a3fe8d1"
+  },
+  {
+    "question": "What type of major impact did the Norman dynasty have on modern Europe?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3a266604f3c001a3fea27"
+  },
+  {
+    "question": "What name comes from the English words Normans/Normanz?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3ab70604f3c001a3feb89"
+  },
+  {
+    "question": "when did Nors encampments ivolve into destructive incursions?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3ad61604f3c001a3fec0d"
+  },
+  {
+    "question": "When did Rollo begin to arrive in Normandy?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3ae14604f3c001a3fec39"
+  },
+  {
+    "question": "What was replace with the Norse religion?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3af11604f3c001a3fec63"
+  },
+  {
+    "question": "Who adopted the fuedel doctrines of the Normans?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3c626604f3c001a3ff011"
+  },
+  {
+    "question": "Who entered Italy soon after the Byzantine Empire?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3dbc6604f3c001a3ff3e9"
+  },
+  {
+    "question": "Who was the first Byzantine mercenary to serve with the Normans?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3de8b604f3c001a3ff467"
+  },
+  {
+    "question": "Who joined Norman forces in the destruction of the Armenians?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3e96b604f3c001a3ff689"
+  },
+  {
+    "question": "Where were several Norman mercenary familes originate from?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3ea79604f3c001a3ff6e9"
+  },
+  {
+    "question": "Who ultimatly drove the Byzantines out of Europe?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3ed26604f3c001a3ff799"
+  },
+  {
+    "question": "Who did the Normans besiege in the 11th century?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3ee2d604f3c001a3ff7e1"
+  },
+  {
+    "question": "Who attacked Dyrrachium in the 11th century?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3f028604f3c001a3ff823"
+  },
+  {
+    "question": "Who married Cnut the Great?",
+    "expected": "Not in the document. This information is not provided in the context.",
+    "relevant_sources": [],
+    "squad_id": "5ad3f187604f3c001a3ff86f"
+  }
+]

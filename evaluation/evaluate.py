@@ -13,14 +13,13 @@ import re
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from evaluation.metrics import source_retrieval_metrics
+from src.config import EMBEDDING_MODEL, MODEL_PATH, TOP_K
 from src.retriever import HybridRetriever
 from src.llm import LocalLLM
 from src.ingestion import load_uploaded_files
 
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-MODEL_PATH = str(ROOT / "models" / "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf")
-DOCS_DIR = ROOT / "data"
-TOP_K = 5
+DOCS_DIR = ROOT / "evaluation" / "benchmark" / "documents"
 
 REFUSAL_PHRASES = (
     "couldn't find",
@@ -98,32 +97,10 @@ def compute_semantic_similarity(embedding_model, text_a: str, text_b: str) -> fl
     return float(np.dot(vec_a, vec_b))
 
 
-def evaluate_retrieval_chunks(
-    scorer,
-    reference: str,
-    hits: List[Dict],
-    hit_threshold: float = 0.35,
-) -> Dict[str, float]:
-    if not hits:
-        return {"context_recall": 0.0, "hit_at_k": 0.0, "reciprocal_rank": 0.0}
-
-    combined_context = " ".join(h.get("text", "") for h in hits)
-    context_recall = scorer.score(reference, combined_context)["rouge1"].recall
-
-    reciprocal_rank = 0.0
-    for rank, h in enumerate(hits, start=1):
-        chunk_recall = scorer.score(reference, h.get("text", ""))["rouge1"].recall
-        if chunk_recall >= hit_threshold:
-            reciprocal_rank = 1.0 / rank
-            break
-
-    hit_at_k = 1.0 if (reciprocal_rank > 0.0 or context_recall >= 0.5) else 0.0
-
-    return {
-        "context_recall": context_recall,
-        "hit_at_k": hit_at_k,
-        "reciprocal_rank": reciprocal_rank,
-    }
+def evaluate_lexical_overlap(scorer, reference: str, hits: List[Dict]) -> float:
+    """Diagnostic answer-token coverage; not source retrieval correctness."""
+    context = " ".join(h.get("text", "") for h in hits)
+    return scorer.score(reference, context)["rouge1"].recall if hits else 0.0
 
 
 def run_evaluation(data_path: Path, output_path: Path):
@@ -136,6 +113,16 @@ def run_evaluation(data_path: Path, output_path: Path):
     if not eval_data:
         print("No questions found.")
         return
+
+    for entry in eval_data:
+        reference = entry.get("expected") or entry.get("reference", "")
+        if isinstance(reference, list):
+            reference = next(iter(reference), "")
+        if not is_unanswerable(reference) and not entry.get("relevant_sources"):
+            raise SystemExit(
+                "Benchmark lacks relevant_sources. Rebuild it with "
+                "evaluation/build_large_benchmark.py before scoring source retrieval."
+            )
 
     documents = load_documents(DOCS_DIR)
     if not documents:
@@ -188,19 +175,20 @@ def run_evaluation(data_path: Path, output_path: Path):
                 retriever.embedding_model, reference, generated
             )
 
-            ret_metrics = evaluate_retrieval_chunks(scorer, reference, hits)
-            ctx_recall = ret_metrics["context_recall"]
-            hit_k = ret_metrics["hit_at_k"]
-            rr = ret_metrics["reciprocal_rank"]
+            ctx_recall = evaluate_lexical_overlap(scorer, reference, hits)
+            source_metrics = source_retrieval_metrics(entry["relevant_sources"], hits)
+            rr = source_metrics["source_reciprocal_rank"]
+            hit_k = source_metrics["source_hit_at_k"]
 
         results.append({
             "question": question,
+            "relevant_sources": entry.get("relevant_sources", []),
             "type": kind,
             "generated": generated,
             "reference": reference,
-            "context_recall": ctx_recall,
-            "hit_at_k": hit_k,
-            "reciprocal_rank": rr,
+            "context_rouge1_recall": ctx_recall,
+            "source_hit_at_k": hit_k,
+            "source_reciprocal_rank": rr,
             "answer_rouge1_recall": ans_recall,
             "rouge1_f1": r1,
             "rougeL_f1": rl,
@@ -236,9 +224,9 @@ def run_evaluation(data_path: Path, output_path: Path):
         avg = lambda key: sum(r[key] for r in answerable) / n
         print(
             f"RETRIEVAL METRICS (Top-{TOP_K}, {n} answerable queries):\n"
-            f"  • Context Recall (ROUGE-1): {avg('context_recall'):.1%}\n"
-            f"  • Hit Rate @ {TOP_K}:             {avg('hit_at_k'):.1%}\n"
-            f"  • Mean Reciprocal Rank:     {avg('reciprocal_rank'):.3f}\n"
+            f"  • Context Recall (ROUGE-1): {avg('context_rouge1_recall'):.1%}\n"
+            f"  • Source Hit Rate @ {TOP_K}:             {avg('source_hit_at_k'):.1%}\n"
+            f"  • Source-passage MRR:     {avg('source_reciprocal_rank'):.3f}\n"
             f"  • Avg Retrieval Latency:    {avg('retrieval_ms'):.1f} ms\n"
         )
         print(
@@ -266,7 +254,7 @@ def run_evaluation(data_path: Path, output_path: Path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data", default=str(ROOT / "evaluation" / "question.json"))
-    parser.add_argument("--out", default=str(ROOT / "evaluation" / "results.json"))
+    parser.add_argument("--data", default=str(ROOT / "evaluation" / "benchmark" / "questions.json"))
+    parser.add_argument("--out", default=str(ROOT / "evaluation" / "results_source_grounded.json"))
     args = parser.parse_args()
     run_evaluation(Path(args.data), Path(args.out))

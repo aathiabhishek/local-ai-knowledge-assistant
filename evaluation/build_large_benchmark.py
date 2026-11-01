@@ -5,8 +5,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCS_DIR = ROOT / "data"
-OUT_JSON = ROOT / "evaluation" / "question.json"
+DOCS_DIR = ROOT / "evaluation" / "benchmark" / "documents"
+OUT_JSON = ROOT / "evaluation" / "benchmark" / "questions.json"
 
 SQUAD_V2_URL = (
     "https://rajpurkar."
@@ -26,7 +26,7 @@ def main():
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
     print("Downloading official Stanford SQuAD v2 dataset directly...")
-    ctx = ssl._create_unverified_context()
+    ctx = ssl.create_default_context()
     req = urllib.request.Request(
         SQUAD_V2_URL,
         headers={"User-Agent": "Mozilla/5.0"},
@@ -72,6 +72,8 @@ def main():
                         answerable_qa.append({
                             "question": qa["question"].strip(),
                             "expected": answers[0]["text"].strip(),
+                            "relevant_sources": [unique_contexts[context]],
+                            "squad_id": qa["id"],
                         })
                         added_ans += 1
                     elif (
@@ -82,6 +84,8 @@ def main():
                         unanswerable_qa.append({
                             "question": qa["question"].strip(),
                             "expected": "Not in the document. This information is not provided in the context.",
+                            "relevant_sources": [],
+                            "squad_id": qa["id"],
                         })
                         added_unans += 1
 

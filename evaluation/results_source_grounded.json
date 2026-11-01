@@ -1,0 +1,2572 @@
+[
+  {
+    "question": "In what country is Normandy located?",
+    "relevant_sources": [
+      "doc_001_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Normandy is located in France. [doc_004_Normans.md]",
+    "reference": "France",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 0.3333333333333333,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.33333333333333337,
+    "rougeL_f1": 0.33333333333333337,
+    "semantic_similarity": 0.41970664262771606,
+    "declined_correctly": null,
+    "retrieval_ms": 1085.7,
+    "generation_ms": 4387.92,
+    "retrieved_sources": [
+      "doc_004_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_038_Normans.md pNone",
+      "doc_031_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When were the Normans in Normandy?",
+    "relevant_sources": [
+      "doc_001_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans were descended from Norse raiders and pirates who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia in the 10th century [doc_001_Normans.md]. Their distinct cultural and ethnic identity emerged initially in the first half of the 10th century [doc_001_Normans.md].",
+    "reference": "10th and 11th centuries",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 0.5,
+    "answer_rouge1_recall": 0.75,
+    "rouge1_f1": 0.12244897959183675,
+    "rougeL_f1": 0.12244897959183675,
+    "semantic_similarity": 0.27087563276290894,
+    "declined_correctly": null,
+    "retrieval_ms": 256.64,
+    "generation_ms": 5277.28,
+    "retrieved_sources": [
+      "doc_029_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_017_Normans.md pNone",
+      "doc_031_Normans.md pNone",
+      "doc_007_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was the duke in the battle of Hastings?",
+    "relevant_sources": [
+      "doc_002_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Duke William II of Normandy was the duke who conquered England and led the invading Normans in the Battle of Hastings in 1066 [doc_017_Normans.md].",
+    "reference": "William the Conqueror",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 0.5,
+    "answer_rouge1_recall": 0.6666666666666666,
+    "rouge1_f1": 0.15384615384615383,
+    "rougeL_f1": 0.15384615384615383,
+    "semantic_similarity": 0.6060305237770081,
+    "declined_correctly": null,
+    "retrieval_ms": 202.63,
+    "generation_ms": 3874.93,
+    "retrieved_sources": [
+      "doc_017_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_009_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_022_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who ruled the duchy of Normandy",
+    "relevant_sources": [
+      "doc_002_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Rollo, a Viking ruler, established the Duchy of Normandy in 911 as a fiefdom through the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia [doc_004_Normans.md].",
+    "reference": "Richard I",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 0.3333333333333333,
+    "answer_rouge1_recall": 0.0,
+    "rouge1_f1": 0.0,
+    "rougeL_f1": 0.0,
+    "semantic_similarity": 0.14304783940315247,
+    "declined_correctly": null,
+    "retrieval_ms": 892.11,
+    "generation_ms": 4609.3,
+    "retrieved_sources": [
+      "doc_004_Normans.md pNone",
+      "doc_017_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_007_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What is the original meaning of the word Norman?",
+    "relevant_sources": [
+      "doc_003_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The original meaning of the word \"Norman\" is \"Norseman, Viking\", derived from Old Norse Norðmaðr or Old Low Franconian Nortmann. [doc_003_Normans.md]",
+    "reference": "Viking",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.08695652173913045,
+    "rougeL_f1": 0.08695652173913045,
+    "semantic_similarity": 0.40940916538238525,
+    "declined_correctly": null,
+    "retrieval_ms": 49.92,
+    "generation_ms": 4685.99,
+    "retrieved_sources": [
+      "doc_003_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_006_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_019_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When was the Latin version of the word Norman first recorded?",
+    "relevant_sources": [
+      "doc_003_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Latin version of the word \"Norman\" was first recorded in the 9th century [doc_003_Normans.md].",
+    "reference": "9th century",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.25,
+    "rougeL_f1": 0.25,
+    "semantic_similarity": 0.4116916358470917,
+    "declined_correctly": null,
+    "retrieval_ms": 229.78,
+    "generation_ms": 3666.97,
+    "retrieved_sources": [
+      "doc_003_Normans.md pNone",
+      "doc_031_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_018_Normans.md pNone",
+      "doc_019_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When was the Duchy of Normandy founded?",
+    "relevant_sources": [
+      "doc_004_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Duchy of Normandy was founded in 911 as a fiefdom, established by the treaty of Saint-Clair-sur-Epte between King Charles III of West Francia and Rollo. [doc_004_Normans.md]",
+    "reference": "911",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.06666666666666667,
+    "rougeL_f1": 0.06666666666666667,
+    "semantic_similarity": 0.1431865692138672,
+    "declined_correctly": null,
+    "retrieval_ms": 60.09,
+    "generation_ms": 4626.14,
+    "retrieved_sources": [
+      "doc_004_Normans.md pNone",
+      "doc_031_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_017_Normans.md pNone",
+      "doc_002_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?",
+    "relevant_sources": [
+      "doc_004_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia [doc_004_Normans.md].",
+    "reference": "King Charles III",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.3157894736842105,
+    "rougeL_f1": 0.3157894736842105,
+    "semantic_similarity": 0.36253756284713745,
+    "declined_correctly": null,
+    "retrieval_ms": 49.31,
+    "generation_ms": 3699.58,
+    "retrieved_sources": [
+      "doc_004_Normans.md pNone",
+      "doc_005_Normans.md pNone",
+      "doc_006_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_013_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who upon arriving gave the original viking settlers a common identity?",
+    "relevant_sources": [
+      "doc_005_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Rollo's contingents, who included Danes, Norwegians, Norse–Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw under Norse control, were given a common identity by Rollo [doc_005_Normans.md].",
+    "reference": "Rollo",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.06451612903225806,
+    "rougeL_f1": 0.06451612903225806,
+    "semantic_similarity": 0.42458048462867737,
+    "declined_correctly": null,
+    "retrieval_ms": 46.25,
+    "generation_ms": 5223.47,
+    "retrieved_sources": [
+      "doc_005_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_006_Normans.md pNone",
+      "doc_004_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was the Norman religion?",
+    "relevant_sources": [
+      "doc_006_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Norman religion was Catholicism (Christianity) [doc_006_Normans.md]. They replaced the Norse religion with Catholicism after assimilating with the local people.",
+    "reference": "Catholicism",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.1,
+    "rougeL_f1": 0.1,
+    "semantic_similarity": 0.4546768069267273,
+    "declined_correctly": null,
+    "retrieval_ms": 45.22,
+    "generation_ms": 3970.87,
+    "retrieved_sources": [
+      "doc_006_Normans.md pNone",
+      "doc_024_Normans.md pNone",
+      "doc_035_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_001_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What part of France were the Normans located?",
+    "relevant_sources": [
+      "doc_006_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans were located in the region of Normandy, which is situated in the former Frankish kingdom of Neustria, between the river Epte and the Atlantic coast [doc_004_Normans.md].",
+    "reference": "north",
+    "context_rouge1_recall": 0.0,
+    "source_hit_at_k": 0.0,
+    "source_reciprocal_rank": 0.0,
+    "answer_rouge1_recall": 0.0,
+    "rouge1_f1": 0.0,
+    "rougeL_f1": 0.0,
+    "semantic_similarity": 0.27354884147644043,
+    "declined_correctly": null,
+    "retrieval_ms": 46.58,
+    "generation_ms": 4451.72,
+    "retrieved_sources": [
+      "doc_001_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_002_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was one of the Norman's major exports?",
+    "relevant_sources": [
+      "doc_007_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "One of the Normans' major exports was fighting horsemen, which they had been exporting for more than a generation by 1066 [doc_007_Normans.md].",
+    "reference": "fighting horsemen",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 0.5,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.17391304347826084,
+    "rougeL_f1": 0.17391304347826084,
+    "semantic_similarity": 0.5445579290390015,
+    "declined_correctly": null,
+    "retrieval_ms": 221.37,
+    "generation_ms": 3856.48,
+    "retrieved_sources": [
+      "doc_002_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_036_Normans.md pNone",
+      "doc_024_Normans.md pNone",
+      "doc_009_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was the Normans' main enemy in Italy, the Byzantine Empire and Armenia?",
+    "relevant_sources": [
+      "doc_008_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans' main enemies in Italy, the Byzantine Empire, and Armenia were the Seljuk Turks. [doc_008_Normans.md]",
+    "reference": "Seljuk Turks",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.23529411764705882,
+    "rougeL_f1": 0.23529411764705882,
+    "semantic_similarity": 0.4480013847351074,
+    "declined_correctly": null,
+    "retrieval_ms": 53.32,
+    "generation_ms": 4194.57,
+    "retrieved_sources": [
+      "doc_008_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_014_Normans.md pNone",
+      "doc_009_Normans.md pNone",
+      "doc_010_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did Herve serve as a Byzantine general?",
+    "relevant_sources": [
+      "doc_009_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Hervé served as a Byzantine general in the 1050s. [doc_009_Normans.md]",
+    "reference": "1050s",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.19999999999999998,
+    "rougeL_f1": 0.19999999999999998,
+    "semantic_similarity": 0.1572113335132599,
+    "declined_correctly": null,
+    "retrieval_ms": 47.82,
+    "generation_ms": 3585.11,
+    "retrieved_sources": [
+      "doc_009_Normans.md pNone",
+      "doc_014_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_011_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did Robert Crispin go up against the Turks?",
+    "relevant_sources": [
+      "doc_009_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "In the 1060s, Robert Crispin led the Normans of Edessa against the Turks. [doc_009_Normans.md]",
+    "reference": "1060s",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.14285714285714288,
+    "rougeL_f1": 0.14285714285714288,
+    "semantic_similarity": 0.24450568854808807,
+    "declined_correctly": null,
+    "retrieval_ms": 48.32,
+    "generation_ms": 3762.82,
+    "retrieved_sources": [
+      "doc_009_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_013_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was the name of the Norman castle?",
+    "relevant_sources": [
+      "doc_010_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Norman castle was named Afranji, meaning \"Franks.\" [doc_010_Normans.md]",
+    "reference": "Afranji",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2222222222222222,
+    "rougeL_f1": 0.2222222222222222,
+    "semantic_similarity": 0.3601612150669098,
+    "declined_correctly": null,
+    "retrieval_ms": 283.54,
+    "generation_ms": 4319.63,
+    "retrieved_sources": [
+      "doc_010_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_003_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was the leader when the Franks entered the Euphrates valley?",
+    "relevant_sources": [
+      "doc_010_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "A Norman named Oursel led a force of \"Franks\" into the upper Euphrates valley in northern Syria [doc_010_Normans.md].",
+    "reference": "Oursel",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.1111111111111111,
+    "rougeL_f1": 0.1111111111111111,
+    "semantic_similarity": 0.23111356794834137,
+    "declined_correctly": null,
+    "retrieval_ms": 47.48,
+    "generation_ms": 3746.62,
+    "retrieved_sources": [
+      "doc_010_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_025_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_001_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What were the origins of the Raouliii family?",
+    "relevant_sources": [
+      "doc_011_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Raoulii family was descended from an Italo-Norman named Raoul. [doc_011_Normans.md]",
+    "reference": "Norman mercenary",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 0.5,
+    "rouge1_f1": 0.15384615384615385,
+    "rougeL_f1": 0.15384615384615385,
+    "semantic_similarity": 0.3264298737049103,
+    "declined_correctly": null,
+    "retrieval_ms": 47.96,
+    "generation_ms": 3545.56,
+    "retrieved_sources": [
+      "doc_011_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_006_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was the name of the count of Apulia",
+    "relevant_sources": [
+      "doc_012_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Robert Guiscard [doc_012_Normans.md]",
+    "reference": "Robert Guiscard",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 1.0,
+    "rougeL_f1": 1.0,
+    "semantic_similarity": 0.7349896430969238,
+    "declined_correctly": null,
+    "retrieval_ms": 45.44,
+    "generation_ms": 3668.29,
+    "retrieved_sources": [
+      "doc_012_Normans.md pNone",
+      "doc_030_Normans.md pNone",
+      "doc_010_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_001_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did Dyrrachium  fall to the Normans?",
+    "relevant_sources": [
+      "doc_012_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Dyrrachium fell to the Normans in February 1082 [doc_012_Normans.md].",
+    "reference": "1082",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 0.5,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2222222222222222,
+    "rougeL_f1": 0.2222222222222222,
+    "semantic_similarity": 0.20939630270004272,
+    "declined_correctly": null,
+    "retrieval_ms": 217.91,
+    "generation_ms": 3843.51,
+    "retrieved_sources": [
+      "doc_014_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_013_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Where did the Normans and Byzantines sign the peace treaty?",
+    "relevant_sources": [
+      "doc_013_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans and Byzantines signed the peace treaty in the city of Deabolis [doc_013_Normans.md].",
+    "reference": "Deabolis",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.14285714285714288,
+    "rougeL_f1": 0.14285714285714288,
+    "semantic_similarity": 0.2927949130535126,
+    "declined_correctly": null,
+    "retrieval_ms": 60.71,
+    "generation_ms": 3775.58,
+    "retrieved_sources": [
+      "doc_013_Normans.md pNone",
+      "doc_014_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_009_Normans.md pNone",
+      "doc_011_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Robert's son?",
+    "relevant_sources": [
+      "doc_013_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Bohemond was Robert's son. [doc_013_Normans.md]",
+    "reference": "Bohemond",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.33333333333333337,
+    "rougeL_f1": 0.33333333333333337,
+    "semantic_similarity": 0.6540560722351074,
+    "declined_correctly": null,
+    "retrieval_ms": 47.85,
+    "generation_ms": 3277.74,
+    "retrieved_sources": [
+      "doc_013_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_020_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did the Normans attack Dyrrachium?",
+    "relevant_sources": [
+      "doc_014_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans attacked Dyrrachium in 1082, when it was betrayed to them by the Venetian and Amalfitan merchants [doc_012_Normans.md]. They also besieged Dyrrachium in 1107 under Bohemond's command [doc_013_Normans.md].",
+    "reference": "1185",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 0.0,
+    "rouge1_f1": 0.0,
+    "rougeL_f1": 0.0,
+    "semantic_similarity": 0.1560201644897461,
+    "declined_correctly": null,
+    "retrieval_ms": 51.03,
+    "generation_ms": 5236.29,
+    "retrieved_sources": [
+      "doc_014_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_013_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was the naval base called?",
+    "relevant_sources": [
+      "doc_014_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Dyrrachium was one of the most important naval bases of the Adriatic [doc_014_Normans.md].",
+    "reference": "Dyrrachium",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.15384615384615385,
+    "rougeL_f1": 0.15384615384615385,
+    "semantic_similarity": 0.539857029914856,
+    "declined_correctly": null,
+    "retrieval_ms": 45.67,
+    "generation_ms": 3299.59,
+    "retrieved_sources": [
+      "doc_014_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_027_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who did Emma Marry?",
+    "relevant_sources": [
+      "doc_015_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Emma married King Ethelred II of England. [doc_015_Normans.md]",
+    "reference": "King Ethelred II",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.6,
+    "rougeL_f1": 0.6,
+    "semantic_similarity": 0.5367881655693054,
+    "declined_correctly": null,
+    "retrieval_ms": 651.23,
+    "generation_ms": 3775.1,
+    "retrieved_sources": [
+      "doc_015_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_027_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Emma's brother?",
+    "relevant_sources": [
+      "doc_015_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Emma's brother was Duke Richard II of Normandy. [doc_015_Normans.md]",
+    "reference": "Duke Richard II",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.5,
+    "rougeL_f1": 0.5,
+    "semantic_similarity": 0.5233972668647766,
+    "declined_correctly": null,
+    "retrieval_ms": 47.85,
+    "generation_ms": 2857.9,
+    "retrieved_sources": [
+      "doc_015_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_030_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Edward the Confessor's half-brother?",
+    "relevant_sources": [
+      "doc_016_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Edward the Confessor's half-brother was Harthacnut [doc_016_Normans.md].",
+    "reference": "Harthacnut",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2222222222222222,
+    "rougeL_f1": 0.2222222222222222,
+    "semantic_similarity": 0.34065869450569153,
+    "declined_correctly": null,
+    "retrieval_ms": 48.19,
+    "generation_ms": 3745.61,
+    "retrieved_sources": [
+      "doc_016_Normans.md pNone",
+      "doc_022_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_001_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did Edward return?",
+    "relevant_sources": [
+      "doc_016_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Edward the Confessor returned in 1041 [doc_016_Normans.md].",
+    "reference": "1041",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.3033201992511749,
+    "declined_correctly": null,
+    "retrieval_ms": 42.38,
+    "generation_ms": 2063.45,
+    "retrieved_sources": [
+      "doc_016_Normans.md pNone",
+      "doc_022_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_027_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Where did Harold II die?",
+    "relevant_sources": [
+      "doc_017_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Harold II died at the Battle of Hastings. [doc_017_Normans.md]",
+    "reference": "Battle of Hastings",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.5454545454545454,
+    "rougeL_f1": 0.5454545454545454,
+    "semantic_similarity": 0.6141511797904968,
+    "declined_correctly": null,
+    "retrieval_ms": 41.84,
+    "generation_ms": 3139.08,
+    "retrieved_sources": [
+      "doc_017_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_027_Normans.md pNone",
+      "doc_004_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who killed Harold II?",
+    "relevant_sources": [
+      "doc_017_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Duke William II of Normandy killed King Harold II at the Battle of Hastings in 1066 [doc_017_Normans.md].",
+    "reference": "William II",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2222222222222222,
+    "rougeL_f1": 0.2222222222222222,
+    "semantic_similarity": 0.49158257246017456,
+    "declined_correctly": null,
+    "retrieval_ms": 45.1,
+    "generation_ms": 2106.52,
+    "retrieved_sources": [
+      "doc_017_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_028_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was the Anglo-Norman language's final form?",
+    "relevant_sources": [
+      "doc_018_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Anglo-Norman language was eventually absorbed into the Anglo-Saxon language of their subjects and influenced it, helping in the development of Middle English. It in turn evolved into Modern English. [doc_018_Normans.md]",
+    "reference": "Modern English",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.11764705882352941,
+    "rougeL_f1": 0.11764705882352941,
+    "semantic_similarity": 0.48358994722366333,
+    "declined_correctly": null,
+    "retrieval_ms": 46.8,
+    "generation_ms": 4086.09,
+    "retrieved_sources": [
+      "doc_018_Normans.md pNone",
+      "doc_003_Normans.md pNone",
+      "doc_006_Normans.md pNone",
+      "doc_033_Normans.md pNone",
+      "doc_002_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "In what year did the Norman's invade at Bannow Bay?",
+    "relevant_sources": [
+      "doc_019_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans invaded at Bannow Bay in 1169. [doc_019_Normans.md]",
+    "reference": "1169",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2222222222222222,
+    "rougeL_f1": 0.2222222222222222,
+    "semantic_similarity": 0.2754182815551758,
+    "declined_correctly": null,
+    "retrieval_ms": 48.24,
+    "generation_ms": 3513.98,
+    "retrieved_sources": [
+      "doc_019_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_014_Normans.md pNone",
+      "doc_013_Normans.md pNone",
+      "doc_017_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What country did the Normans invade in 1169?",
+    "relevant_sources": [
+      "doc_019_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans invaded Ireland in 1169. [doc_019_Normans.md]",
+    "reference": "Ireland",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.39803317189216614,
+    "declined_correctly": null,
+    "retrieval_ms": 44.32,
+    "generation_ms": 3049.89,
+    "retrieved_sources": [
+      "doc_019_Normans.md pNone",
+      "doc_014_Normans.md pNone",
+      "doc_017_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_010_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Margaret's brother?",
+    "relevant_sources": [
+      "doc_020_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Margaret's brother was Edgar Atheling [doc_020_Normans.md].",
+    "reference": "Edgar",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.46822109818458557,
+    "declined_correctly": null,
+    "retrieval_ms": 42.86,
+    "generation_ms": 3305.42,
+    "retrieved_sources": [
+      "doc_020_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_030_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Margaret's husband?",
+    "relevant_sources": [
+      "doc_020_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "King Malcolm III of Scotland was Margaret's husband [doc_020_Normans.md].",
+    "reference": "King Malcolm III of Scotland",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.7142857142857143,
+    "rougeL_f1": 0.7142857142857143,
+    "semantic_similarity": 0.7619147300720215,
+    "declined_correctly": null,
+    "retrieval_ms": 42.53,
+    "generation_ms": 3006.28,
+    "retrieved_sources": [
+      "doc_020_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_030_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who did Alexander I marry?",
+    "relevant_sources": [
+      "doc_021_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Alexander I married Sybilla of Normandy. [doc_021_Normans.md]",
+    "reference": "Sybilla of Normandy",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.6666666666666666,
+    "rougeL_f1": 0.6666666666666666,
+    "semantic_similarity": 0.5085869431495667,
+    "declined_correctly": null,
+    "retrieval_ms": 45.27,
+    "generation_ms": 3750.17,
+    "retrieved_sources": [
+      "doc_021_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_027_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What culture's arrival in Scotland is know as the \"Davidian Revolution\"?",
+    "relevant_sources": [
+      "doc_021_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The arrival of Norman culture in Scotland is known as the \"Davidian Revolution\". [doc_021_Normans.md]",
+    "reference": "Norman",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.14285714285714288,
+    "rougeL_f1": 0.14285714285714288,
+    "semantic_similarity": 0.5232786536216736,
+    "declined_correctly": null,
+    "retrieval_ms": 63.86,
+    "generation_ms": 3197.21,
+    "retrieved_sources": [
+      "doc_021_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_020_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Where was Ralph earl of?",
+    "relevant_sources": [
+      "doc_022_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Ralph was set up as earl of Hereford by Edward the Confessor. [doc_022_Normans.md]",
+    "reference": "Hereford",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.15384615384615385,
+    "rougeL_f1": 0.15384615384615385,
+    "semantic_similarity": 0.47012126445770264,
+    "declined_correctly": null,
+    "retrieval_ms": 58.69,
+    "generation_ms": 3166.51,
+    "retrieved_sources": [
+      "doc_022_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_036_Normans.md pNone",
+      "doc_023_Normans.md pNone",
+      "doc_020_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Ralph in charge of being at war with?",
+    "relevant_sources": [
+      "doc_022_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Ralph was charged with defending the Marches and warring with the Welsh. [doc_022_Normans.md]",
+    "reference": "the Welsh",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.4914903938770294,
+    "declined_correctly": null,
+    "retrieval_ms": 49.1,
+    "generation_ms": 2682.3,
+    "retrieved_sources": [
+      "doc_022_Normans.md pNone",
+      "doc_016_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What country was under the control of Norman barons?",
+    "relevant_sources": [
+      "doc_023_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Shropshire and Cheshire, specifically mentioned as being under the control of Norman barons Roger of Montgomery and Hugh Lupus respectively [doc_023_Normans.md].",
+    "reference": "Wales",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 0.0,
+    "rouge1_f1": 0.0,
+    "rougeL_f1": 0.0,
+    "semantic_similarity": 0.49223724007606506,
+    "declined_correctly": null,
+    "retrieval_ms": 44.39,
+    "generation_ms": 4370.71,
+    "retrieved_sources": [
+      "doc_023_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_010_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_002_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What year did Roger de Tosny fail to accomplish what he set out to do?",
+    "relevant_sources": [
+      "doc_024_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Roger de Tosny failed to carve out a state for himself from Moorish lands in 1018. [doc_024_Normans.md]",
+    "reference": "1018",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.11764705882352941,
+    "rougeL_f1": 0.11764705882352941,
+    "semantic_similarity": 0.21891650557518005,
+    "declined_correctly": null,
+    "retrieval_ms": 47.63,
+    "generation_ms": 3929.48,
+    "retrieved_sources": [
+      "doc_024_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_027_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_028_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was in charge of the papal army in the War of Barbastro?",
+    "relevant_sources": [
+      "doc_024_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "William of Montreuil led the papal army in the War of Barbastro [doc_012_Normans.md].",
+    "reference": "William of Montreuil",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.4,
+    "rougeL_f1": 0.4,
+    "semantic_similarity": 0.6041433811187744,
+    "declined_correctly": null,
+    "retrieval_ms": 52.69,
+    "generation_ms": 3160.37,
+    "retrieved_sources": [
+      "doc_024_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_025_Normans.md pNone",
+      "doc_014_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did the Siege of Antioch take place?",
+    "relevant_sources": [
+      "doc_025_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Siege of Antioch took place in 1097. [doc_025_Normans.md]",
+    "reference": "1097",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2222222222222222,
+    "rougeL_f1": 0.2222222222222222,
+    "semantic_similarity": 0.25101742148399353,
+    "declined_correctly": null,
+    "retrieval_ms": 46.07,
+    "generation_ms": 3587.39,
+    "retrieved_sources": [
+      "doc_025_Normans.md pNone",
+      "doc_024_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_010_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was the name of Bohemond's nephew?",
+    "relevant_sources": [
+      "doc_025_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Tancred was Bohemond's nephew [doc_025_Normans.md].",
+    "reference": "Tancred",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.33333333333333337,
+    "rougeL_f1": 0.33333333333333337,
+    "semantic_similarity": 0.5655248165130615,
+    "declined_correctly": null,
+    "retrieval_ms": 45.53,
+    "generation_ms": 2857.75,
+    "retrieved_sources": [
+      "doc_025_Normans.md pNone",
+      "doc_013_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_030_Normans.md pNone",
+      "doc_007_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "How long did Western Europe control Cyprus?",
+    "relevant_sources": [
+      "doc_026_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Western Europe controlled Cyprus for 380 years. [doc_026_Normans.md]",
+    "reference": "380 years",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.4444444444444445,
+    "rougeL_f1": 0.4444444444444445,
+    "semantic_similarity": 0.3161315321922302,
+    "declined_correctly": null,
+    "retrieval_ms": 51.01,
+    "generation_ms": 2904.07,
+    "retrieved_sources": [
+      "doc_026_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_027_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_029_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What ruined Richard's plans to reach Acre?",
+    "relevant_sources": [
+      "doc_027_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "A storm dispersed Richard's fleet. [doc_027_Normans.md]",
+    "reference": "a storm",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.5,
+    "rougeL_f1": 0.5,
+    "semantic_similarity": 0.408846378326416,
+    "declined_correctly": null,
+    "retrieval_ms": 54.66,
+    "generation_ms": 3272.91,
+    "retrieved_sources": [
+      "doc_027_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Richard's fiancee?",
+    "relevant_sources": [
+      "doc_027_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Richard's fiancée was Berengaria. [doc_027_Normans.md]",
+    "reference": "Berengaria",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.4795786142349243,
+    "declined_correctly": null,
+    "retrieval_ms": 43.46,
+    "generation_ms": 2811.41,
+    "retrieved_sources": [
+      "doc_027_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_015_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_020_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was Guy's Rival?",
+    "relevant_sources": [
+      "doc_028_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Conrad of Montferrat was Guy's rival. [doc_028_Normans.md]",
+    "reference": "Conrad of Montferrat",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.6,
+    "rougeL_f1": 0.6,
+    "semantic_similarity": 0.8441402912139893,
+    "declined_correctly": null,
+    "retrieval_ms": 41.85,
+    "generation_ms": 3291.92,
+    "retrieved_sources": [
+      "doc_028_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_023_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What were Isaac's chains made out of?",
+    "relevant_sources": [
+      "doc_028_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Isaac was confined with silver chains. [doc_028_Normans.md]",
+    "reference": "silver",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.34759223461151123,
+    "declined_correctly": null,
+    "retrieval_ms": 45.67,
+    "generation_ms": 2698.24,
+    "retrieved_sources": [
+      "doc_028_Normans.md pNone",
+      "doc_027_Normans.md pNone",
+      "doc_009_Normans.md pNone",
+      "doc_033_Normans.md pNone",
+      "doc_011_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What continent are the Canarian Islands off the coast of?",
+    "relevant_sources": [
+      "doc_029_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Canarian Islands are off the Atlantic coast of Africa. [doc_029_Normans.md]",
+    "reference": "Africa",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.18181818181818182,
+    "rougeL_f1": 0.18181818181818182,
+    "semantic_similarity": 0.4394679069519043,
+    "declined_correctly": null,
+    "retrieval_ms": 46.2,
+    "generation_ms": 3678.35,
+    "retrieved_sources": [
+      "doc_029_Normans.md pNone",
+      "doc_005_Normans.md pNone",
+      "doc_027_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_004_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who became the King of the Canary Islands?",
+    "relevant_sources": [
+      "doc_030_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Bethencourt took the title of King of the Canary Islands, as vassal to Henry III of Castile [doc_030_Normans.md].",
+    "reference": "Bethencourt",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.1111111111111111,
+    "rougeL_f1": 0.1111111111111111,
+    "semantic_similarity": 0.45074108242988586,
+    "declined_correctly": null,
+    "retrieval_ms": 46.4,
+    "generation_ms": 3362.26,
+    "retrieved_sources": [
+      "doc_030_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_028_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who bought the rights?",
+    "relevant_sources": [
+      "doc_030_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Enrique Pérez de Guzmán, 2nd Count de Niebla, bought the rights to the Canary Islands from Maciot de Bethencourt in 1418 [doc_030_Normans.md].",
+    "reference": "Enrique Pérez de Guzmán",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.41379310344827586,
+    "rougeL_f1": 0.41379310344827586,
+    "semantic_similarity": 0.3855578899383545,
+    "declined_correctly": null,
+    "retrieval_ms": 42.83,
+    "generation_ms": 3429.84,
+    "retrieved_sources": [
+      "doc_030_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_022_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_020_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Where are Jersey and Guernsey",
+    "relevant_sources": [
+      "doc_031_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Jersey and Guernsey are located in the Channel Islands. [doc_031_Normans.md]",
+    "reference": "Channel Islands",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.3636363636363636,
+    "rougeL_f1": 0.3636363636363636,
+    "semantic_similarity": 0.605819582939148,
+    "declined_correctly": null,
+    "retrieval_ms": 52.12,
+    "generation_ms": 4032.85,
+    "retrieved_sources": [
+      "doc_031_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_004_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "How many customaries does Norman customary law have?",
+    "relevant_sources": [
+      "doc_031_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Norman customary law has two customaries: the Très ancien coutumier and the Grand coutumier de Normandie. [doc_031_Normans.md]",
+    "reference": "two",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.1111111111111111,
+    "rougeL_f1": 0.1111111111111111,
+    "semantic_similarity": 0.09072068333625793,
+    "declined_correctly": null,
+    "retrieval_ms": 48.06,
+    "generation_ms": 4119.71,
+    "retrieved_sources": [
+      "doc_031_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_019_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What is the Norman architecture idiom?",
+    "relevant_sources": [
+      "doc_032_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Norman architecture idiom is a unique Romanesque idiom that typically features rounded arches, particularly over windows and doorways, and massive proportions. [doc_032_Normans.md]",
+    "reference": "Romanesque",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.08695652173913045,
+    "rougeL_f1": 0.08695652173913045,
+    "semantic_similarity": 0.5351142883300781,
+    "declined_correctly": null,
+    "retrieval_ms": 46.92,
+    "generation_ms": 3643.86,
+    "retrieved_sources": [
+      "doc_032_Normans.md pNone",
+      "doc_033_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_003_Normans.md pNone",
+      "doc_035_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What kind of arches does Norman architecture have?",
+    "relevant_sources": [
+      "doc_032_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Norman architecture is characterised by rounded arches, particularly over windows and doorways. [doc_032_Normans.md]",
+    "reference": "rounded",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.15384615384615385,
+    "rougeL_f1": 0.15384615384615385,
+    "semantic_similarity": 0.30258068442344666,
+    "declined_correctly": null,
+    "retrieval_ms": 46.86,
+    "generation_ms": 2986.1,
+    "retrieved_sources": [
+      "doc_032_Normans.md pNone",
+      "doc_033_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_037_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What architecture type came after Norman in England?",
+    "relevant_sources": [
+      "doc_033_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The period of Norman architecture in England is immediately succeeded by the Early Gothic. [doc_033_Normans.md]",
+    "reference": "Early Gothic",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.25,
+    "rougeL_f1": 0.25,
+    "semantic_similarity": 0.5956931114196777,
+    "declined_correctly": null,
+    "retrieval_ms": 45.79,
+    "generation_ms": 3220.87,
+    "retrieved_sources": [
+      "doc_033_Normans.md pNone",
+      "doc_032_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_035_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What architecture type came before Norman in England?",
+    "relevant_sources": [
+      "doc_033_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The period of Norman architecture in England immediately succeeds that of the Anglo-Saxon. [doc_033_Normans.md]",
+    "reference": "Anglo-Saxon",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.25,
+    "rougeL_f1": 0.25,
+    "semantic_similarity": 0.5439270734786987,
+    "declined_correctly": null,
+    "retrieval_ms": 44.34,
+    "generation_ms": 1985.58,
+    "retrieved_sources": [
+      "doc_033_Normans.md pNone",
+      "doc_032_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_022_Normans.md pNone",
+      "doc_002_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did the church reform begin?",
+    "relevant_sources": [
+      "doc_034_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The church reform began in the early 11th century [doc_034_Normans.md].",
+    "reference": "early 11th century",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.5,
+    "rougeL_f1": 0.5,
+    "semantic_similarity": 0.5502839684486389,
+    "declined_correctly": null,
+    "retrieval_ms": 43.4,
+    "generation_ms": 3234.66,
+    "retrieved_sources": [
+      "doc_034_Normans.md pNone",
+      "doc_035_Normans.md pNone",
+      "doc_024_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who used the church to unify themselves?",
+    "relevant_sources": [
+      "doc_034_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Normans used the church as a unifying force for their disparate duchy. [doc_034_Normans.md]",
+    "reference": "dukes",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 0.0,
+    "rouge1_f1": 0.0,
+    "rougeL_f1": 0.0,
+    "semantic_similarity": 0.26870524883270264,
+    "declined_correctly": null,
+    "retrieval_ms": 44.27,
+    "generation_ms": 2866.44,
+    "retrieved_sources": [
+      "doc_034_Normans.md pNone",
+      "doc_037_Normans.md pNone",
+      "doc_018_Normans.md pNone",
+      "doc_037_Normans.md pNone",
+      "doc_035_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When were the French wars of religion?",
+    "relevant_sources": [
+      "doc_035_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The French Wars of Religion occurred in the 16th century [doc_035_Normans.md].",
+    "reference": "16th century",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.33333333333333337,
+    "rougeL_f1": 0.33333333333333337,
+    "semantic_similarity": 0.551446795463562,
+    "declined_correctly": null,
+    "retrieval_ms": 44.25,
+    "generation_ms": 3209.86,
+    "retrieved_sources": [
+      "doc_035_Normans.md pNone",
+      "doc_024_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_007_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What kind of needlework was used in the creation of the Bayeux Tapestry?",
+    "relevant_sources": [
+      "doc_036_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Bayeux Tapestry was a work of embroidery, not a tapestry. [doc_036_Normans.md]",
+    "reference": "embroidery",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.16666666666666669,
+    "rougeL_f1": 0.16666666666666669,
+    "semantic_similarity": 0.46329402923583984,
+    "declined_correctly": null,
+    "retrieval_ms": 46.91,
+    "generation_ms": 3267.49,
+    "retrieved_sources": [
+      "doc_036_Normans.md pNone",
+      "doc_037_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_037_Normans.md pNone",
+      "doc_034_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What is Norman art's most well known piece?",
+    "relevant_sources": [
+      "doc_036_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The most famous work of Norman art is the Bayeux Tapestry, which is not a tapestry but a work of embroidery. [doc_036_Normans.md]",
+    "reference": "Bayeux Tapestry",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.17391304347826084,
+    "rougeL_f1": 0.17391304347826084,
+    "semantic_similarity": 0.6542367339134216,
+    "declined_correctly": null,
+    "retrieval_ms": 41.0,
+    "generation_ms": 2695.42,
+    "retrieved_sources": [
+      "doc_036_Normans.md pNone",
+      "doc_037_Normans.md pNone",
+      "doc_032_Normans.md pNone",
+      "doc_033_Normans.md pNone",
+      "doc_034_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What is the most important type of Norman art preserved in churches?",
+    "relevant_sources": [
+      "doc_037_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Mosaics are the most important type of Norman art preserved in churches, which were common in Norman Italy and drew heavily on the Greek heritage [doc_037_Normans.md].",
+    "reference": "mosaics",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.07692307692307693,
+    "rougeL_f1": 0.07692307692307693,
+    "semantic_similarity": 0.5485293865203857,
+    "declined_correctly": null,
+    "retrieval_ms": 48.82,
+    "generation_ms": 3660.15,
+    "retrieved_sources": [
+      "doc_037_Normans.md pNone",
+      "doc_036_Normans.md pNone",
+      "doc_037_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_032_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "In what century did important classical music developments occur in Normandy?",
+    "relevant_sources": [
+      "doc_038_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "Important classical music developments occurred in Normandy in the 11th century. [doc_038_Normans.md]",
+    "reference": "11th",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.16666666666666669,
+    "rougeL_f1": 0.16666666666666669,
+    "semantic_similarity": 0.1956050992012024,
+    "declined_correctly": null,
+    "retrieval_ms": 43.97,
+    "generation_ms": 3805.46,
+    "retrieved_sources": [
+      "doc_038_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_031_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_001_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who were the two abbots at Fécamp Abbey?",
+    "relevant_sources": [
+      "doc_038_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The two Italian abbots at Fécamp Abbey were William of Volpiano and John of Ravenna. [doc_038_Normans.md]",
+    "reference": "William of Volpiano and John of Ravenna",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.6086956521739131,
+    "rougeL_f1": 0.6086956521739131,
+    "semantic_similarity": 0.5514175891876221,
+    "declined_correctly": null,
+    "retrieval_ms": 48.19,
+    "generation_ms": 3236.08,
+    "retrieved_sources": [
+      "doc_038_Normans.md pNone",
+      "doc_039_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_001_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Where did the monks flee to?",
+    "relevant_sources": [
+      "doc_039_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The monks fled to southern Italy, where they were patronised by Robert Guiscard and established a Latin monastery at Sant'Eufemia [doc_039_Normans.md].",
+    "reference": "southern Italy",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.17391304347826084,
+    "rougeL_f1": 0.17391304347826084,
+    "semantic_similarity": 0.34798598289489746,
+    "declined_correctly": null,
+    "retrieval_ms": 45.39,
+    "generation_ms": 3697.27,
+    "retrieved_sources": [
+      "doc_039_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_029_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What monastery did the Saint-Evroul monks establish in Italy?",
+    "relevant_sources": [
+      "doc_039_Normans.md"
+    ],
+    "type": "answerable",
+    "generated": "The Saint-Evroul monks established a Latin monastery at Sant'Eufemia in southern Italy [doc_039_Normans.md].",
+    "reference": "Latin monastery at Sant'Eufemia.",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.5263157894736842,
+    "rougeL_f1": 0.5263157894736842,
+    "semantic_similarity": 0.8437514305114746,
+    "declined_correctly": null,
+    "retrieval_ms": 46.92,
+    "generation_ms": 3217.96,
+    "retrieved_sources": [
+      "doc_039_Normans.md pNone",
+      "doc_038_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_037_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What branch of theoretical computer science deals with broadly classifying computational problems by difficulty and class of relationship?",
+    "relevant_sources": [
+      "doc_040_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. [doc_040_Computational_complexity_theory.md]",
+    "reference": "Computational complexity theory",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.16666666666666669,
+    "rougeL_f1": 0.16666666666666669,
+    "semantic_similarity": 0.7933080196380615,
+    "declined_correctly": null,
+    "retrieval_ms": 48.73,
+    "generation_ms": 4455.95,
+    "retrieved_sources": [
+      "doc_040_Computational_complexity_theory.md pNone",
+      "doc_057_Computational_complexity_theory.md pNone",
+      "doc_042_Computational_complexity_theory.md pNone",
+      "doc_057_Computational_complexity_theory.md pNone",
+      "doc_064_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "By what main attribute are computational problems classified utilizing computational complexity theory?",
+    "relevant_sources": [
+      "doc_040_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "Computational problems are classified according to their inherent difficulty, specifically requiring significant resources, whatever the algorithm used [doc_041_Computational_complexity_theory.md].",
+    "reference": "inherent difficulty",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.21052631578947367,
+    "rougeL_f1": 0.21052631578947367,
+    "semantic_similarity": 0.41308796405792236,
+    "declined_correctly": null,
+    "retrieval_ms": 45.18,
+    "generation_ms": 3213.24,
+    "retrieved_sources": [
+      "doc_040_Computational_complexity_theory.md pNone",
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_042_Computational_complexity_theory.md pNone",
+      "doc_057_Computational_complexity_theory.md pNone",
+      "doc_073_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What measure of a computational problem broadly defines the inherent difficulty of the solution?",
+    "relevant_sources": [
+      "doc_041_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The inherent difficulty of a solution is broadly defined by the amount of resources needed to solve it, such as time and storage [1, doc_041_Computational_complexity_theory.md].",
+    "reference": "if its solution requires significant resources",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 0.3333333333333333,
+    "rouge1_f1": 0.13793103448275862,
+    "rougeL_f1": 0.13793103448275862,
+    "semantic_similarity": 0.44429054856300354,
+    "declined_correctly": null,
+    "retrieval_ms": 52.47,
+    "generation_ms": 4067.94,
+    "retrieved_sources": [
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_040_Computational_complexity_theory.md pNone",
+      "doc_050_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_057_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What method is used to intuitively assess or quantify the amount of resources required to solve a computational problem?",
+    "relevant_sources": [
+      "doc_041_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "Computational complexity theory uses mathematical models of computation to study problems and quantify the amount of resources needed to solve them, such as time and storage. [doc_041_Computational_complexity_theory.md]",
+    "reference": "mathematical models of computation",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2666666666666667,
+    "rougeL_f1": 0.2666666666666667,
+    "semantic_similarity": 0.6261731386184692,
+    "declined_correctly": null,
+    "retrieval_ms": 46.78,
+    "generation_ms": 4102.58,
+    "retrieved_sources": [
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_042_Computational_complexity_theory.md pNone",
+      "doc_050_Computational_complexity_theory.md pNone",
+      "doc_061_Computational_complexity_theory.md pNone",
+      "doc_057_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What two fields of theoretical computer science closely mirror computational complexity theory?",
+    "relevant_sources": [
+      "doc_042_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The two fields of theoretical computer science that closely mirror computational complexity theory are analysis of algorithms and computability theory. [doc_042_Computational_complexity_theory.md]",
+    "reference": "analysis of algorithms and computability theory",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.4615384615384615,
+    "rougeL_f1": 0.4615384615384615,
+    "semantic_similarity": 0.6742607355117798,
+    "declined_correctly": null,
+    "retrieval_ms": 45.39,
+    "generation_ms": 3695.0,
+    "retrieved_sources": [
+      "doc_042_Computational_complexity_theory.md pNone",
+      "doc_040_Computational_complexity_theory.md pNone",
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_058_Computational_complexity_theory.md pNone",
+      "doc_074_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What field of computer science analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem?",
+    "relevant_sources": [
+      "doc_042_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "Analysis of algorithms is the field of computer science that analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem [doc_042_Computational_complexity_theory.md].",
+    "reference": "analysis of algorithms",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.21428571428571425,
+    "rougeL_f1": 0.21428571428571425,
+    "semantic_similarity": 0.7136741876602173,
+    "declined_correctly": null,
+    "retrieval_ms": 51.99,
+    "generation_ms": 3476.45,
+    "retrieved_sources": [
+      "doc_042_Computational_complexity_theory.md pNone",
+      "doc_061_Computational_complexity_theory.md pNone",
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_056_Computational_complexity_theory.md pNone",
+      "doc_040_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What is the name given to the input string of a computational problem?",
+    "relevant_sources": [
+      "doc_043_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The input string for a computational problem is referred to as a problem instance [doc_043_Computational_complexity_theory.md].",
+    "reference": "problem instance",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.25,
+    "rougeL_f1": 0.25,
+    "semantic_similarity": 0.3794414699077606,
+    "declined_correctly": null,
+    "retrieval_ms": 52.42,
+    "generation_ms": 3418.03,
+    "retrieved_sources": [
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_046_Computational_complexity_theory.md pNone",
+      "doc_045_Computational_complexity_theory.md pNone",
+      "doc_047_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "In computational complexity theory, what is the term given to describe the baseline abstract question needing to be solved?",
+    "relevant_sources": [
+      "doc_043_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The term given to describe the baseline abstract question needing to be solved in computational complexity theory is \"problem\". [doc_043_Computational_complexity_theory.md]",
+    "reference": "the problem",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.1904761904761905,
+    "rougeL_f1": 0.1904761904761905,
+    "semantic_similarity": 0.2649756669998169,
+    "declined_correctly": null,
+    "retrieval_ms": 52.73,
+    "generation_ms": 3562.33,
+    "retrieved_sources": [
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_040_Computational_complexity_theory.md pNone",
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_067_Computational_complexity_theory.md pNone",
+      "doc_042_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "By how many kilometers does the traveling salesman problem seek to classify a route between the 15 largest cities in Germany?",
+    "relevant_sources": [
+      "doc_044_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The traveling salesman problem seeks to classify a route of at most 2000 kilometres passing through all of Germany's 15 largest cities. [doc_044_Computational_complexity_theory.md]",
+    "reference": "2000",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.08333333333333333,
+    "rougeL_f1": 0.08333333333333333,
+    "semantic_similarity": 0.15478827059268951,
+    "declined_correctly": null,
+    "retrieval_ms": 52.15,
+    "generation_ms": 4108.64,
+    "retrieved_sources": [
+      "doc_044_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_076_Computational_complexity_theory.md pNone",
+      "doc_040_Computational_complexity_theory.md pNone",
+      "doc_010_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What is one example of an instance that the quantitative answer to the traveling salesman problem fails to answer?",
+    "relevant_sources": [
+      "doc_044_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "A round trip through all sites in Milan whose total length is at most 10 km. [doc_044_Computational_complexity_theory.md]",
+    "reference": "round trip through all sites in Milan",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.6086956521739131,
+    "rougeL_f1": 0.6086956521739131,
+    "semantic_similarity": 0.6630488634109497,
+    "declined_correctly": null,
+    "retrieval_ms": 48.45,
+    "generation_ms": 2754.25,
+    "retrieved_sources": [
+      "doc_044_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_045_Computational_complexity_theory.md pNone",
+      "doc_047_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "In a computational problem, what can be described as a string over an alphabet?",
+    "relevant_sources": [
+      "doc_045_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "A problem instance can be described as a string over an alphabet [doc_045_Computational_complexity_theory.md].",
+    "reference": "problem instance",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.2857142857142857,
+    "rougeL_f1": 0.2857142857142857,
+    "semantic_similarity": 0.4160845875740051,
+    "declined_correctly": null,
+    "retrieval_ms": 51.63,
+    "generation_ms": 3463.15,
+    "retrieved_sources": [
+      "doc_045_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_046_Computational_complexity_theory.md pNone",
+      "doc_047_Computational_complexity_theory.md pNone",
+      "doc_040_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What is the name of the alphabet is most commonly used in a problem instance?",
+    "relevant_sources": [
+      "doc_045_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The binary alphabet, which is the set {0,1}, is most commonly used in a problem instance [doc_045_Computational_complexity_theory.md].",
+    "reference": "binary alphabet",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.21052631578947367,
+    "rougeL_f1": 0.21052631578947367,
+    "semantic_similarity": 0.6560038328170776,
+    "declined_correctly": null,
+    "retrieval_ms": 49.86,
+    "generation_ms": 2503.34,
+    "retrieved_sources": [
+      "doc_045_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_044_Computational_complexity_theory.md pNone",
+      "doc_070_Computational_complexity_theory.md pNone",
+      "doc_057_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What kind of problems are one of the main topics studied in computational complexity theory?",
+    "relevant_sources": [
+      "doc_046_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "Decision problems are one of the central objects of study in computational complexity theory. [doc_046_Computational_complexity_theory.md]",
+    "reference": "Decision problems",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.25,
+    "rougeL_f1": 0.25,
+    "semantic_similarity": 0.5650052428245544,
+    "declined_correctly": null,
+    "retrieval_ms": 45.17,
+    "generation_ms": 3451.94,
+    "retrieved_sources": [
+      "doc_046_Computational_complexity_theory.md pNone",
+      "doc_041_Computational_complexity_theory.md pNone",
+      "doc_074_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_075_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What are the two simple word responses to a decision problem?",
+    "relevant_sources": [
+      "doc_046_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The two simple word responses to a decision problem are yes or no [doc_046_Computational_complexity_theory.md]. Alternatively, they can also be represented as 1 or 0 [doc_046_Computational_complexity_theory.md].",
+    "reference": "yes or no",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.23076923076923078,
+    "rougeL_f1": 0.23076923076923078,
+    "semantic_similarity": 0.1832112967967987,
+    "declined_correctly": null,
+    "retrieval_ms": 47.3,
+    "generation_ms": 3733.64,
+    "retrieved_sources": [
+      "doc_046_Computational_complexity_theory.md pNone",
+      "doc_047_Computational_complexity_theory.md pNone",
+      "doc_049_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What kind of graph is an example of an input used in a decision problem?",
+    "relevant_sources": [
+      "doc_047_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "An arbitrary graph is an example of an input used in a decision problem. [doc_047_Computational_complexity_theory.md]",
+    "reference": "arbitrary graph",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.25,
+    "rougeL_f1": 0.25,
+    "semantic_similarity": 0.6690003871917725,
+    "declined_correctly": null,
+    "retrieval_ms": 51.6,
+    "generation_ms": 3453.58,
+    "retrieved_sources": [
+      "doc_047_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_046_Computational_complexity_theory.md pNone",
+      "doc_049_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "What is the term for the set of all connected graphs related to this decision problem?",
+    "relevant_sources": [
+      "doc_047_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "The formal language associated with this decision problem is the set of all connected graphs. [doc_047_Computational_complexity_theory.md]",
+    "reference": "formal language",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.23529411764705882,
+    "rougeL_f1": 0.23529411764705882,
+    "semantic_similarity": 0.28921329975128174,
+    "declined_correctly": null,
+    "retrieval_ms": 54.24,
+    "generation_ms": 3160.56,
+    "retrieved_sources": [
+      "doc_047_Computational_complexity_theory.md pNone",
+      "doc_049_Computational_complexity_theory.md pNone",
+      "doc_046_Computational_complexity_theory.md pNone",
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_064_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "A function problem is an example of what?",
+    "relevant_sources": [
+      "doc_048_Computational_complexity_theory.md"
+    ],
+    "type": "answerable",
+    "generated": "A function problem is an example of a computational problem where a single output is expected for every input, but the output is more complex than that of a decision problem. [doc_048_Computational_complexity_theory.md]",
+    "reference": "a computational problem",
+    "context_rouge1_recall": 1.0,
+    "source_hit_at_k": 1.0,
+    "source_reciprocal_rank": 1.0,
+    "answer_rouge1_recall": 1.0,
+    "rouge1_f1": 0.17647058823529413,
+    "rougeL_f1": 0.17647058823529413,
+    "semantic_similarity": 0.364835262298584,
+    "declined_correctly": null,
+    "retrieval_ms": 44.0,
+    "generation_ms": 3963.87,
+    "retrieved_sources": [
+      "doc_048_Computational_complexity_theory.md pNone",
+      "doc_049_Computational_complexity_theory.md pNone",
+      "doc_047_Computational_complexity_theory.md pNone",
+      "doc_043_Computational_complexity_theory.md pNone",
+      "doc_045_Computational_complexity_theory.md pNone"
+    ]
+  },
+  {
+    "question": "Who gave their name to Normandy in the 1000's and 1100's",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "The people who gave their name to Normandy in the 10th and 11th centuries were the Normans, descended from Norse raiders and pirates from Denmark, Iceland, and Norway. [doc_001_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 47.39,
+    "generation_ms": 4739.23,
+    "retrieved_sources": [
+      "doc_001_Normans.md pNone",
+      "doc_031_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_017_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What type of major impact did the Norman dynasty have on modern Europe?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "I cannot answer this question based on the uploaded documents. The provided context does not contain the required information about the impact of the Norman dynasty on modern Europe.",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": true,
+    "retrieval_ms": 82.82,
+    "generation_ms": 4146.89,
+    "retrieved_sources": [
+      "doc_002_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_007_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_035_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What name comes from the English words Normans/Normanz?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "The name \"Normans\" comes from the French words Normans/Normanz, plural of Normant, modern French normand. [doc_003_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 74.99,
+    "generation_ms": 4449.09,
+    "retrieved_sources": [
+      "doc_003_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_019_Normans.md pNone",
+      "doc_002_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "when did Nors encampments ivolve into destructive incursions?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "I cannot answer this question based on the uploaded documents. The provided context does not contain the required information.",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": true,
+    "retrieval_ms": 103.02,
+    "generation_ms": 3441.26,
+    "retrieved_sources": [
+      "doc_004_Normans.md pNone",
+      "doc_035_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_013_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "When did Rollo begin to arrive in Normandy?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "Rollo's contingents who raided and ultimately settled Normandy included various groups, but the text does not specify when Rollo began to arrive in Normandy. However, it mentions that earlier Viking settlers had begun arriving in the 880s [doc_005_Normans.md].",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 69.97,
+    "generation_ms": 4707.79,
+    "retrieved_sources": [
+      "doc_005_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_034_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "What was replace with the Norse religion?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "Catholicism (Christianity) was adopted in place of the Norse religion. [doc_006_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 132.42,
+    "generation_ms": 3698.81,
+    "retrieved_sources": [
+      "doc_006_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_018_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_003_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who adopted the fuedel doctrines of the Normans?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "The rest of France adopted the growing feudal doctrines of the Normans. [doc_007_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 121.53,
+    "generation_ms": 3744.47,
+    "retrieved_sources": [
+      "doc_007_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_024_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_006_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who entered Italy soon after the Byzantine Empire?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "The Normans entered Italy soon after the Byzantine Empire. [doc_008_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 135.11,
+    "generation_ms": 3681.29,
+    "retrieved_sources": [
+      "doc_008_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_002_Normans.md pNone",
+      "doc_014_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who was the first Byzantine mercenary to serve with the Normans?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "I cannot answer this question based on the uploaded documents. The provided context does not contain the required information.",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": true,
+    "retrieval_ms": 72.75,
+    "generation_ms": 3918.4,
+    "retrieved_sources": [
+      "doc_009_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_011_Normans.md pNone",
+      "doc_013_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who joined Norman forces in the destruction of the Armenians?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "Turkish forces joined Norman forces in the destruction of the Armenians vassal-states of Sassoun and Taron in far eastern Anatolia. [doc_010_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 97.31,
+    "generation_ms": 4392.61,
+    "retrieved_sources": [
+      "doc_010_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_029_Normans.md pNone",
+      "doc_025_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Where were several Norman mercenary familes originate from?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "Several families of Norman mercenaries were of Byzantine Greece origin, descended from western European warriors. Specifically, the Raoulii were descended from an Italo-Norman named Raoul, the Petraliphae were descended from a Pierre d'Aulps, and the Maniakates were descended from Normans who served under George Maniaces in the Sicilian expedition of 1038 [doc_011_Normans.md].",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 101.09,
+    "generation_ms": 6435.01,
+    "retrieved_sources": [
+      "doc_011_Normans.md pNone",
+      "doc_008_Normans.md pNone",
+      "doc_009_Normans.md pNone",
+      "doc_001_Normans.md pNone",
+      "doc_010_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who ultimatly drove the Byzantines out of Europe?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "Robert Guiscard, an other Norman adventurer, ultimately drove the Byzantines out of southern Italy [doc_012_Normans.md].",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 127.87,
+    "generation_ms": 3690.48,
+    "retrieved_sources": [
+      "doc_012_Normans.md pNone",
+      "doc_014_Normans.md pNone",
+      "doc_011_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_009_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who did the Normans besiege in the 11th century?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "I cannot answer this question based on the uploaded documents. The provided context does not contain the required information.",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": true,
+    "retrieval_ms": 79.39,
+    "generation_ms": 4192.87,
+    "retrieved_sources": [
+      "doc_001_Normans.md pNone",
+      "doc_034_Normans.md pNone",
+      "doc_004_Normans.md pNone",
+      "doc_038_Normans.md pNone",
+      "doc_037_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who attacked Dyrrachium in the 11th century?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "The Normans attacked Dyrrachium in the 11th century. [doc_012_Normans.md]",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": false,
+    "retrieval_ms": 78.49,
+    "generation_ms": 3784.13,
+    "retrieved_sources": [
+      "doc_014_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_012_Normans.md pNone",
+      "doc_013_Normans.md pNone",
+      "doc_012_Normans.md pNone"
+    ]
+  },
+  {
+    "question": "Who married Cnut the Great?",
+    "relevant_sources": [],
+    "type": "unanswerable",
+    "generated": "I cannot answer this question based on the uploaded documents. The provided context does not contain the required information.",
+    "reference": "Not in the document. This information is not provided in the context.",
+    "context_rouge1_recall": null,
+    "source_hit_at_k": null,
+    "source_reciprocal_rank": null,
+    "answer_rouge1_recall": null,
+    "rouge1_f1": null,
+    "rougeL_f1": null,
+    "semantic_similarity": null,
+    "declined_correctly": true,
+    "retrieval_ms": 120.57,
+    "generation_ms": 3560.59,
+    "retrieved_sources": [
+      "doc_015_Normans.md pNone",
+      "doc_020_Normans.md pNone",
+      "doc_021_Normans.md pNone",
+      "doc_028_Normans.md pNone",
+      "doc_030_Normans.md pNone"
+    ]
+  }
+]
