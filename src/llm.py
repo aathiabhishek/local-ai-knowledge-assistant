@@ -1,8 +1,9 @@
 import os
+import re
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from src.config import N_CTX, N_THREADS, N_GPU_LAYERS, MAX_NEW_TOKENS
+from src.config import N_CTX, N_THREADS, N_GPU_LAYERS, MAX_NEW_TOKENS, CLOUD_MODEL_NAME
 
 MAX_HISTORY_TURNS = 8
 MAX_CHUNKS = 5
@@ -48,13 +49,17 @@ Rules:
 "{FALLBACK_MESSAGE}"
 """
 
-# Fixed: Removed the unsafe "about" keyword to protect your 92.1% evaluation score
-_BROAD_QUERY_KEYWORDS = (
-    "explain this", "explain the document", "explain document", "describe",
-    "summarize", "summary", "overview", "what is this about", "what is this document",
-    "key points", "takeaways", "main points", "tldr", "tl;dr", "outline", "brief",
-    "walk me through", "what is this", "synthesize", "condense", "digest", "recap", "abstract",
+# Only explicit requests to summarize the uploaded material use summary formatting.
+_SUMMARY_REQUEST = re.compile(
+    r"(?:please\s+)?(?:summarize|summarise|outline|explain|describe)\s+"
+    r"(?:this|the|my|these|uploaded)\s+(?:uploaded\s+)?"
+    r"(?:document|documents|file|files|pdf|pdfs|text|passage|passages)"
+    r"(?:\s+(?:please|briefly|in detail))?[.!?]?", re.IGNORECASE,
 )
+
+
+def is_document_summary_request(question: str) -> bool:
+    return bool(_SUMMARY_REQUEST.fullmatch(question.strip()))
 
 
 def _rough_token_count(text: str) -> int:
@@ -113,14 +118,12 @@ class _LLMBase:
         if not retrieved_chunks:
             return None
 
-        question_lower = question.lower().strip()
-        is_broad_request = any(keyword in question_lower for keyword in _BROAD_QUERY_KEYWORDS)
+        is_broad_request = is_document_summary_request(question)
         top_chunk = retrieved_chunks[0]
         top_score = top_chunk.get("score")
 
         if (
-            not is_broad_request
-            and min_rerank_score is not None
+            min_rerank_score is not None
             and top_score is not None
             and top_score < min_rerank_score
         ):
@@ -215,8 +218,8 @@ class GroqLLM(_LLMBase):
             raise ValueError("GROQ_API_KEY is not set.")
         
         self.key = key
-        # Fixed: Fallback to the real, valid free model ID on Groq
-        self.model = model or os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+        # The configured model is shared by inference and the UI.
+        self.model = model or CLOUD_MODEL_NAME
         self.mode = "groq"
 
     def _generate(self, messages: List[Dict], temperature: float) -> str:

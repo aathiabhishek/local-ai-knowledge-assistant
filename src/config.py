@@ -13,7 +13,8 @@ MODEL_PATH = os.getenv(
 
 # Optional Cloud API fallback (used ONLY when the local .gguf file is not present on disk)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-CLOUD_MODEL_NAME = os.getenv("CLOUD_MODEL_NAME", "openai/gpt-oss-120b")
+CLOUD_MODEL_NAME = (os.getenv("GROQ_MODEL") or os.getenv("CLOUD_MODEL_NAME")
+                    or "openai/gpt-oss-120b")
 
 # Retrieval & Reranking models
 EMBEDDING_MODEL = os.getenv(
