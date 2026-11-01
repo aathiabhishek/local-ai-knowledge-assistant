@@ -113,6 +113,9 @@ if st.session_state.llm is None:
                 st.session_state.model_backend = "local"
             except Exception as exc:
                 local_load_error = exc
+                st.error(f"Local model initialization failed: {exc}")
+                st.exception(exc)
+                
                 # If the local model exists but cannot initialize, try Groq below.
 
     if st.session_state.llm is None and groq_api_key:
@@ -166,7 +169,7 @@ with st.sidebar:
     model_loaded = st.session_state.llm is not None
 
     if model_loaded and st.session_state.model_backend == "groq":
-        active_model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+        active_model = st.session_state.llm.model
         model_status = f"""
         <div class="status-row">
             <span class="status-dot status-green"></span>
@@ -333,7 +336,7 @@ _header_dot = "status-green" if st.session_state.llm is not None else "status-re
 if st.session_state.llm is None:
     _header_label = "Offline · No model connected"
 elif st.session_state.model_backend == "groq":
-    _header_label = f"Online · Groq API · {os.getenv('GROQ_MODEL', 'openai/gpt-oss-120b')}"
+    _header_label = f"Online · Groq API · {st.session_state.llm.model}"
 elif st.session_state.model_backend == "local":
     _header_label = f"Online · Local model · {Path(MODEL_PATH).name}"
 else:
